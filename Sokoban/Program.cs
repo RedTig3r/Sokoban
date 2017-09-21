@@ -12,7 +12,8 @@ namespace Sokoban
         static void Main(string[] args)
         {
             GameController g = new GameController();
-            g.startGame();
+           
+      
         }
     }
 }

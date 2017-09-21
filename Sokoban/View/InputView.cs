@@ -9,19 +9,7 @@ namespace Sokoban
     public class InputView
     {
 
-        public int input
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public void showView()
+        public void ShowView()
         {
             System.Console.WriteLine(" _______________________________________________________");
             System.Console.WriteLine("|                                                       |");
@@ -38,8 +26,10 @@ namespace Sokoban
             System.Console.WriteLine("|      @ : truck             |                          |");
             System.Console.WriteLine("|_______________________________________________________|");
             Console.WriteLine("");
-            Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
-            System.Console.ReadLine();
+          
         }
+
+
+     
     }
 }

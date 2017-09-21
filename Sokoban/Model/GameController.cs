@@ -14,61 +14,71 @@ namespace Sokoban.Model
         private Maze maze;
         private ConsoleKeyInfo KeyInfo;
 
-    
+
 
         public GameController()
         {
             inputView = new InputView();
             outputView = new OutputView();
-           
+            StartGame();
         }
 
-        public void startGame()
+        private void StartGame()
         {
             //first view of the game
-            showOutput1();
-            Console.WriteLine("Kies een doolhof (1 - 4), s = stop");
-            int MazeNumber = 0;
+            inputView.ShowView();
+            AskGameInput();
+            Console.WriteLine("next shit ");
             Console.ReadLine();
-            try
+
+
+        }
+
+
+
+        private void AskGameInput()
+        {
+            while (true)
             {
 
+                Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
+                Console.WriteLine("");
+
+                KeyInfo = Console.ReadKey(true);
 
                 switch (KeyInfo.Key)
                 {
-
-
                     case ConsoleKey.S:
+
+
                         Environment.Exit(0);
-                        break;
-                    case ConsoleKey.D1:
-                        MazeNumber = 1;
-                        break;
-                    case ConsoleKey.D2:
-                        MazeNumber = 2;
-                        break;
-                    case ConsoleKey.D3:
-                        MazeNumber = 3;
-                        break;
-                    case ConsoleKey.D4:
-                        MazeNumber = 4;
+
+                        return;
+                    case ConsoleKey.NumPad1:
+
+                        Console.WriteLine("1");
+                        return;
+                    case ConsoleKey.NumPad2:
+                        Console.WriteLine("2");
+                        return;
+                    case ConsoleKey.NumPad3:
+
+                        Console.WriteLine("3");
+
+                        return;
+                    case ConsoleKey.NumPad4:
+
+                        Console.WriteLine("4");
+
+                        return;
+
+                    default:
+                        Console.WriteLine("> ?");
                         break;
                 }
 
-
-              
-
-                maze = new Maze(MazeNumber);
-
-                
             }
-            catch 
-            {
-                System.Console.WriteLine("Try again!");
-            }
-
         }
-        
 
 
         private void MoveTruckUp()
@@ -92,33 +102,7 @@ namespace Sokoban.Model
         }
 
 
-        public void showOutput1()
-        {
-            inputView.showView();
-            Console.ReadLine();
 
-            string result = Console.ReadLine();
-
-            try
-            {
-                if (input == "s")
-                {
-                    Environment.Exit(0);
-                }
-
-                result = Convert.ToString(input);
-            }
-            catch
-            {
-                System.Console.WriteLine("Try again!");
-            }
-        }
-
-        public void showOutput2()
-        {
-            outputView.ShowMenu();
-            Console.ReadLine();
-        }
 
     }
 }
