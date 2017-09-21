@@ -38,6 +38,7 @@ namespace Sokoban
             System.Console.WriteLine("|      @ : truck             |                          |");
             System.Console.WriteLine("|_______________________________________________________|");
             Console.WriteLine("");
+            Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
             System.Console.ReadLine();
         }
     }

@@ -24,25 +24,8 @@ namespace Sokoban.Model
         public void startGame()
         {
             //first view of the game
-            showOutput1();
-            Console.WriteLine("Kies een doolhof (1 - 4), s = stop");
-            Console.ReadLine();
-
-            string result;
-            
-            try
-            {
-                if (input == "s")
-                {
-                    Environment.Exit(0);
-                }
-                result = Convert.ToString(input);
-                
-            }
-            catch 
-            {
-                System.Console.WriteLine("Try again!");
-            }
+            //showOutput1();
+            showOutput2();
 
         }
         
@@ -72,11 +55,29 @@ namespace Sokoban.Model
         public void showOutput1()
         {
             inputView.showView();
+            Console.ReadLine();
+
+            string result = Console.ReadLine();
+
+            try
+            {
+                if (input == "s")
+                {
+                    Environment.Exit(0);
+                }
+
+                result = Convert.ToString(input);
+            }
+            catch
+            {
+                System.Console.WriteLine("Try again!");
+            }
         }
 
         public void showOutput2()
         {
-            
+            outputView.ShowMenu();
+            Console.ReadLine();
         }
 
     }
