@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    class InputView
+    public class InputView
     {
 
         public int input

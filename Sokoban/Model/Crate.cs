@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    class Crate
+    public class Crate
     {
         private Tile tile;
     }

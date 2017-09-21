@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    class Destination : Tile
+    public class Destination : Tile
     {
         public override bool CanEnter()
         {
