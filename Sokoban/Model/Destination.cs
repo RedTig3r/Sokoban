@@ -8,5 +8,9 @@ namespace Sokoban
 {
     class Destination : Tile
     {
+        public override bool CanEnter()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

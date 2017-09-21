@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sokoban.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,8 @@ namespace Sokoban
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("koel");
-            Console.ReadLine();
+            GameController g = new GameController();
+            g.startGame();
         }
     }
 }
