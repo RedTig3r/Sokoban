@@ -95,11 +95,29 @@ namespace Sokoban.Model
         public void showOutput1()
         {
             inputView.showView();
+            Console.ReadLine();
+
+            string result = Console.ReadLine();
+
+            try
+            {
+                if (input == "s")
+                {
+                    Environment.Exit(0);
+                }
+
+                result = Convert.ToString(input);
+            }
+            catch
+            {
+                System.Console.WriteLine("Try again!");
+            }
         }
 
         public void showOutput2()
         {
-            
+            outputView.ShowMenu();
+            Console.ReadLine();
         }
 
     }

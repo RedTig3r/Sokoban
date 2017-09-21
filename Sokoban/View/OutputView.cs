@@ -9,7 +9,15 @@ namespace Sokoban
     {
         public void ShowMenu()
         {
-            throw new System.NotImplementedException();
+            System.Console.WriteLine(" _________");
+            System.Console.WriteLine("|         |");
+            System.Console.WriteLine("| Sokoban |");
+            System.Console.WriteLine("|_________|");
+            System.Console.WriteLine("________________________________________________________");
+            System.Console.WriteLine(" Hier komt shit van de doolhof");
+            
+            System.Console.WriteLine("________________________________________________________|");
+            Console.WriteLine("> gebruik pijltjestoetjes (s = stop, r = reset");
         }
     }
 }
