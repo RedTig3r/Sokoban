@@ -13,15 +13,25 @@ namespace Sokoban.Model
         private Maze maze;
 
 
-        public GameController()
+
+        public void MoveTruckUp()
         {
-            inputView = new InputView();
+            throw new System.NotImplementedException();
         }
 
-
-        public void showOutput1()
+        public void MoveTruckDown()
         {
-            inputView.ShowOutput1();
+            throw new System.NotImplementedException();
+        }
+
+        public void MoveTruckLeft()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void MoveTruckRight()
+        {
+            throw new System.NotImplementedException();
         }
 
     }

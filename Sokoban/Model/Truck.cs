@@ -11,12 +11,12 @@ namespace Sokoban
 
         public void PushCrate()
         {
-            throw new System.NotImplementedException();
-        }
 
-        public void Move()
-        {
-            throw new System.NotImplementedException();
         }
+            
+
+
+
+
     }
 }

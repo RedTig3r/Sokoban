@@ -20,7 +20,7 @@
   <Class Name="Sokoban.Model.GameController">
     <Position X="5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAgAAAAAAAAAAAQAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AkAQAAAAAAECAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -48,14 +48,11 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Truck">
-    <Position X="2" Y="5.25" Width="1.5" />
+    <Position X="1.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAIAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Truck.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="tile" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Wall" Collapsed="true">
     <Position X="3.25" Y="8.25" Width="1.5" />
@@ -67,7 +64,7 @@
   <Class Name="Sokoban.Tile" Collapsed="true">
     <Position X="5" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
