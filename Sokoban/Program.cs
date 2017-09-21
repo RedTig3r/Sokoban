@@ -10,6 +10,8 @@ namespace Sokoban
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("koel");
+            Console.ReadLine();
         }
     }
 }
