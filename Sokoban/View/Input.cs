@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    internal enum EnumPijlen
+    public internal enum EnumPijlen
     {
         number1,
         number2,

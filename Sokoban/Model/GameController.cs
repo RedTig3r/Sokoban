@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokoban.Model
 {
-    class GameController
+    public class GameController
     {
         private InputView Asks_for;
         private OutputView shows;

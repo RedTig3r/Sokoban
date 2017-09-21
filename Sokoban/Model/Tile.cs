@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    abstract class Tile
+    public abstract class Tile
     {
         public abstract bool CanEnter();
 
