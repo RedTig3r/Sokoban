@@ -38,7 +38,7 @@ namespace Sokoban
             System.Console.WriteLine("|      @ : truck             |                          |");
             System.Console.WriteLine("|_______________________________________________________|");
             Console.WriteLine("");
-            System.Console.ReadLine();
+     
         }
     }
 }

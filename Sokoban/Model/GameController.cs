@@ -12,14 +12,15 @@ namespace Sokoban.Model
         private InputView inputView;
         private OutputView outputView;
         private Maze maze;
+        private ConsoleKeyInfo KeyInfo;
 
-        private string input;
+    
 
         public GameController()
         {
             inputView = new InputView();
             outputView = new OutputView();
-            maze = new Maze();
+           
         }
 
         public void startGame()
@@ -27,17 +28,38 @@ namespace Sokoban.Model
             //first view of the game
             showOutput1();
             Console.WriteLine("Kies een doolhof (1 - 4), s = stop");
+            int MazeNumber = 0;
             Console.ReadLine();
-
-            string result;
-            
             try
             {
-                if (input == "s")
+
+
+                switch (KeyInfo.Key)
                 {
-                    Environment.Exit(0);
+
+
+                    case ConsoleKey.S:
+                        Environment.Exit(0);
+                        break;
+                    case ConsoleKey.D1:
+                        MazeNumber = 1;
+                        break;
+                    case ConsoleKey.D2:
+                        MazeNumber = 2;
+                        break;
+                    case ConsoleKey.D3:
+                        MazeNumber = 3;
+                        break;
+                    case ConsoleKey.D4:
+                        MazeNumber = 4;
+                        break;
                 }
-                result = Convert.ToString(input);
+
+
+              
+
+                maze = new Maze(MazeNumber);
+
                 
             }
             catch 
@@ -47,62 +69,6 @@ namespace Sokoban.Model
 
         }
         
-
-
-        int sidesY = 20;
-        int sidesX = 20;
-
-
-        public GameController()
-        {
-         
-        }
-
-      
-
-
-
-        public void input()
-        {
-            ConsoleKeyInfo KeyInfo;
-
-
-
-            KeyInfo = Console.ReadKey(true);
-            Console.Clear();
-
-
-            switch (KeyInfo.Key)
-            {
-                case ConsoleKey.RightArrow:
-                    sidesY++;
-                    Console.SetCursorPosition(sidesY, sidesX);
-                    Console.Write("kenny tu");
-                    break;
-                case ConsoleKey.LeftArrow:
-                    sidesY--;
-                    Console.SetCursorPosition(sidesY, sidesX);
-                    Console.Write("kenny tu");
-                    break;
-                case ConsoleKey.UpArrow:
-                    sidesX--;
-                    Console.SetCursorPosition(sidesY, sidesX);
-                    Console.Write("kenny tu");
-                    break;
-                case ConsoleKey.DownArrow:
-                    sidesX++;
-                    Console.SetCursorPosition(sidesY, sidesX);
-                    Console.Write("kenny tu");
-                    break;
-
-
-
-            }
-        }
-       
-
-
-
 
 
         private void MoveTruckUp()

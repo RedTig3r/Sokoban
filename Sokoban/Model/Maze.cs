@@ -12,5 +12,11 @@ namespace Sokoban
         private FileReader inputFileReader;
         private Truck truck;
         private Crate crate;
+
+
+        public Maze(int inputFileReaderNumber)
+        {
+
+        }
     }
 }
