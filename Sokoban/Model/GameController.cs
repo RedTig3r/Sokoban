@@ -9,10 +9,44 @@ namespace Sokoban.Model
 {
     public class GameController
     {
-        private InputView Asks_for;
-        private OutputView shows;
+        private InputView inputView;
+        private OutputView outputView;
         private Maze maze;
 
+        private string input;
+
+        public GameController()
+        {
+            inputView = new InputView();
+            outputView = new OutputView();
+            maze = new Maze();
+        }
+
+        public void startGame()
+        {
+            //first view of the game
+            showOutput1();
+            Console.WriteLine("Kies een doolhof (1 - 4), s = stop");
+            Console.ReadLine();
+
+            string result;
+            
+            try
+            {
+                if (input == "s")
+                {
+                    Environment.Exit(0);
+                }
+                result = Convert.ToString(input);
+                
+            }
+            catch 
+            {
+                System.Console.WriteLine("Try again!");
+            }
+
+        }
+        
 
 
         int sidesY = 20;
@@ -89,6 +123,17 @@ namespace Sokoban.Model
         private void MoveTruckRight()
         {
             throw new System.NotImplementedException();
+        }
+
+
+        public void showOutput1()
+        {
+            inputView.showView();
+        }
+
+        public void showOutput2()
+        {
+            
         }
 
     }
