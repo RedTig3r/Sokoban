@@ -11,5 +11,28 @@ namespace Sokoban.Model
         private InputView Asks_for;
         private OutputView shows;
         private Maze maze;
+
+
+
+        public void MoveTruckUp()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void MoveTruckDown()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void MoveTruckLeft()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void MoveTruckRight()
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }

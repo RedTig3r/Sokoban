@@ -7,16 +7,15 @@ namespace Sokoban
 {
     public class Truck
     {
-        private Tile tile;
-
-        public void PushKist()
+    
+        public Truck()
         {
-            throw new System.NotImplementedException();
-        }
 
-        public void Move()
-        {
-            throw new System.NotImplementedException();
         }
+            
+
+
+
+
     }
 }

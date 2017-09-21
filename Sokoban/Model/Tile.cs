@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Tile
+    abstract class Tile
     {
-        private int locatie;
-        private Crate kisten;
+        public abstract bool CanEnter();
+
+      
     }
 }
