@@ -8,8 +8,21 @@ namespace Sokoban.Model
 {
     class GameController
     {
-        private InputView Asks_for;
+        private InputView inputView;
         private OutputView shows;
         private Maze maze;
+
+
+        public GameController()
+        {
+            inputView = new InputView();
+        }
+
+
+        public void showOutput1()
+        {
+            inputView.ShowOutput1();
+        }
+
     }
 }

@@ -9,7 +9,7 @@ namespace Sokoban
     {
         private Tile tile;
 
-        public void PushKist()
+        public void PushCrate()
         {
             throw new System.NotImplementedException();
         }

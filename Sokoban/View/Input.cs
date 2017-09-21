@@ -16,6 +16,6 @@ namespace Sokoban
         pijlLinks,
         pijlRechts,
         R,
-        S
+        S,
     }
 }

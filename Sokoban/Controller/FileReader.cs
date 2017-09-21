@@ -7,5 +7,6 @@ namespace Sokoban
 {
     public class FileReader
     {
+
     }
 }
