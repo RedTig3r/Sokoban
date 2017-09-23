@@ -18,7 +18,6 @@ namespace Sokoban
 
             this._keyInfo = Console.ReadKey(true);
 
-          
             switch (_keyInfo.Key)
             {
                 case ConsoleKey.S:
@@ -38,7 +37,11 @@ namespace Sokoban
                 case ConsoleKey.LeftArrow:
                     return Input.Left;
 
-            System.Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
+                case ConsoleKey.RightArrow:
+                    return Input.Left;
+                default:
+                    return Input.Wrong;
+            }
         }
         public int AskToSelectMazeInput()
         {

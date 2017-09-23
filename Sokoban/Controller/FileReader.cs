@@ -21,14 +21,14 @@ namespace Sokoban
 
         public Maze LoadMaze(int nummer)
         {
-            Maze mazeNumber;
-            this.maze = new Maze();
+         
+            this.maze = new Maze(nummer);
 
 
 
 
 
-            return mazeNumber;
+            return maze;
         }
 
         internal void CreateTiles()

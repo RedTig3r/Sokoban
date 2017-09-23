@@ -27,8 +27,7 @@ namespace Sokoban.Controller
 
         private void StartGame()
         {
-            int num = 1;
-
+        
             //first view of the game
             _outputView.ShowGameInfo();
 
@@ -44,39 +43,33 @@ namespace Sokoban.Controller
 
                 if (mazeNumber == -1)
                 {
-                    case "s":
-                        Environment.Exit(0);
-                        return;
-                    case "1":
-                        _maze = new Maze(1);
-                        return;
-                    case "2":
-                        _maze = new Maze(2);
+                    Environment.Exit(0);
 
-                        return;
-                    case "3":
+                }
+                else if (mazeNumber > 0 && mazeNumber < 5)
+                {
+                    _maze = new Sokoban.Maze(mazeNumber);
+                    inputIsCorrect = true;
 
-                        _maze = new Maze(3);
-
-                        return;
-                    case "4":
-
-                        _maze = new Maze(4);
-
-                        return;
-
-                    default:
-                        _inputView.ShowWrongInput();
-                        break;
+                }
+                else
+                {
+                    _inputView.ShowWrongInput();
+                    inputIsCorrect = false;
                 }
 
+
+
+
             }
+
+
 
             while (_gameIsFinish != true)
             {
                 inputIsCorrect = false;
                 _outputView.ShowGameProces(_maze);
-        
+
 
                 while (inputIsCorrect != true)
                 {
@@ -118,17 +111,9 @@ namespace Sokoban.Controller
                     }
 
                 }
-              
-               
+
+
             }
-
-
-
-           
-
-
-
-
 
             _inputView.AskToPressKeyToStartOver();
             this.StartGame();
