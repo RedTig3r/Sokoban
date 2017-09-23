@@ -7,16 +7,24 @@ namespace Sokoban
 {
     public class Maze
     {
-        private Tile vak;
-        private int[] vakken;
-        private FileReader inputFileReader;
-        private Truck truck;
-        private Crate crate;
+        private Tile _firstTile;
+        private int _mazeNumber;
+        private FileReader _fileReader;
+
+        private Truck _Truck;
+        private Crate _Crate;
 
 
-        public Maze(int inputFileReaderNumber)
+       
+        public Maze(int mazeNumber)
         {
 
+            _mazeNumber = mazeNumber;
+            _fileReader = new FileReader(mazeNumber);
+
+
+           
+            _fileReader.CreateTiles();
         }
 
 
@@ -25,9 +33,9 @@ namespace Sokoban
 
         }
 
-        internal void ShowMaze()
+        public void ShowMaze()
         {
-            System.Console.WriteLine("maze");
+            throw new NotImplementedException();
         }
     }
 }

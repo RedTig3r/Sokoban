@@ -8,9 +8,11 @@ namespace Sokoban
 {
     public class Floor : Tile
     {
+        
+
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

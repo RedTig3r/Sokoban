@@ -10,7 +10,7 @@ namespace Sokoban
     {
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

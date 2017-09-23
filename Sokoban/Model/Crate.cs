@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    public class Crate
+    public class Crate 
     {
+        char icon
+
     }
 }

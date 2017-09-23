@@ -32,6 +32,11 @@ namespace Sokoban
             System.Console.WriteLine("> ?");
         }
 
+        public void AskToPressKeyToStartOver()
+        {
+            System.Console.WriteLine("=== HOERA OPGELOST ===");
+            System.Console.WriteLine("> press key to continue");
+        }
 
 
     }

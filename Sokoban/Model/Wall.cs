@@ -8,9 +8,14 @@ namespace Sokoban
 {
     public class Wall : Tile
     {
+        public Wall()
+        {
+          this._icon = '█';
+        }
+
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+             return false;
         }
     }
 }

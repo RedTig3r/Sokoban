@@ -6,72 +6,83 @@
   <Class Name="Sokoban.FileReader">
     <Position X="8.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Controller\FileReader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Controller.GameController" Collapsed="true">
-    <Position X="5" Y="2.25" Width="1.5" />
+    <Position X="5.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AkAQAAAAAAEAAAAAAAAAAAAiAAAEAAQAACAAAAAAAAA=</HashCode>
+      <HashCode>AEBQAAAAAAEAAAgAAAAAhAAgAAAEAACAgAAAACAAAAA=</HashCode>
       <FileName>Controller\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="inputView" />
-      <Field Name="outputView" />
-      <Field Name="maze" />
+      <Field Name="_inputView" />
+      <Field Name="_outputView" />
+      <Field Name="_maze" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Maze">
     <Position X="5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAEAAAAABAAAAAAAAAAAAoAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQIAAAAgAAAABAAAAAAICAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Model\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="vak" />
-      <Field Name="inputFileReader" />
-      <Field Name="truck" />
-      <Field Name="crate" />
+      <Field Name="_fileReader" />
+      <Field Name="_Crate" />
+      <Field Name="_firstTile" />
+      <Field Name="_Truck" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Truck">
-    <Position X="1.75" Y="4" Width="1.5" />
+    <Position X="13.25" Y="7" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall" Collapsed="true">
-    <Position X="3.25" Y="8.5" Width="1.5" />
+    <Position X="2.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Tile" Collapsed="true">
-    <Position X="5" Y="7.25" Width="1.5" />
+  <Class Name="Sokoban.Tile">
+    <Position X="5.25" Y="8.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAABAAAEAAAAABAAABAAAAAAEAABACAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="crate" />
+      <Field Name="truck" />
+      <Field Name="RightTile" />
+      <Field Name="LeftTile" />
+      <Field Name="UpTile" />
+      <Field Name="DownTile" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Floor" Collapsed="true">
-    <Position X="5" Y="8.5" Width="1.5" />
+    <Position X="5.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Crate">
-    <Position X="7.5" Y="6.5" Width="1.5" />
+    <Position X="1.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Destination" Collapsed="true">
-    <Position X="7" Y="8.5" Width="1.5" />
+    <Position X="8.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
@@ -80,14 +91,14 @@
   <Class Name="Sokoban.OutputView" Collapsed="true">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\OutputView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.InputView">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAAAABAAAAAAAAACAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>View\InputView.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -17,7 +17,7 @@ namespace Sokoban
             System.Console.WriteLine("| Betekenis van symbolen     |   Doel van het spel      |");
             System.Console.WriteLine("|                            |                          |");
             System.Console.WriteLine("| spatie : outerspace        |   Duw met de truck       |");
-            System.Console.WriteLine("|      W : muur              |   de krat(ten)           |");
+            System.Console.WriteLine("|      █ : muur              |   de krat(ten)           |");
             System.Console.WriteLine("|      * : vloer             |   naar de bestemming     |");
             System.Console.WriteLine("|      O : krat              |                          |");
             System.Console.WriteLine("|      o : krat op bestemming|                          |");
@@ -31,6 +31,8 @@ namespace Sokoban
 
         public void ShowGameProces(Maze maze)
         {
+            System.Console.Clear();
+
             System.Console.WriteLine(" _________");
             System.Console.WriteLine("|         |");
             System.Console.WriteLine("| Sokoban |");
@@ -45,22 +47,6 @@ namespace Sokoban
             System.Console.WriteLine("________________________________________________________|");
     
         }
-
-     
-        public void resetGameProces(Maze maze)
-        {
-            System.Console.Clear();
-            this.ShowGameProces(maze);
-
-     
-        }
-
-       
-
-
-       
-
-  
 
     }
 }

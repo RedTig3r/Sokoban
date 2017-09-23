@@ -9,35 +9,35 @@ namespace Sokoban.Controller
 {
     public class GameController
     {
-        private InputView inputView;
-        private OutputView outputView;
-        private Maze maze;
-        private ConsoleKeyInfo KeyInfo;
-        private bool gameIsFinish;
+        private InputView _inputView;
+        private OutputView _outputView;
+        private Maze _maze;
+        private ConsoleKeyInfo _keyInfo;
+        private bool _gameIsFinish;
 
 
 
         public GameController()
         {
-            this.inputView = new InputView();
-            this.outputView = new OutputView();
-            this.gameIsFinish = false;
+            this._inputView = new InputView();
+            this._outputView = new OutputView();
+            this._gameIsFinish = false;
             this.StartGame();
-          
+
         }
 
         private void StartGame()
         {
             //first view of the game
-            outputView.ShowGameInfo();
+            _outputView.ShowGameInfo();
             this.SelectMazeInput();
-            System.Console.Clear();
-            outputView.ShowGameProces(maze);
+         
+            _outputView.ShowGameProces(_maze);
             this.GameControlInput();
 
-
-            System.Console.ReadLine();
-
+            _inputView.AskToPressKeyToStartOver();
+            System.Console.ReadKey();
+            this.StartGame();
 
         }
 
@@ -48,35 +48,35 @@ namespace Sokoban.Controller
             while (true)
             {
 
-                inputView.AskToSelectMaze();
+                _inputView.AskToSelectMaze();
 
-                this.KeyInfo = Console.ReadKey(true);
+                this._keyInfo = Console.ReadKey(true);
 
-                switch (KeyInfo.KeyChar.ToString().ToLower())
+                switch (_keyInfo.KeyChar.ToString().ToLower())
                 {
                     case "s":
                         Environment.Exit(0);
                         return;
                     case "1":
-                        maze = new Maze(1);
+                        _maze = new Maze(1);
                         return;
                     case "2":
-                        maze = new Maze(2);
-             
+                        _maze = new Maze(2);
+
                         return;
                     case "3":
 
-                        maze = new Maze(3);
-                  
+                        _maze = new Maze(3);
+
                         return;
                     case "4":
 
-                        maze = new Maze(4);
-                  
+                        _maze = new Maze(4);
+
                         return;
 
                     default:
-                        inputView.ShowWrongInput();
+                        _inputView.ShowWrongInput();
                         break;
                 }
 
@@ -86,56 +86,62 @@ namespace Sokoban.Controller
 
         private void GameControlInput()
         {
-        
-        
-            while (gameIsFinish != true)
+
+            bool inputIsWrong;
+
+            while (_gameIsFinish != true)
             {
+                inputIsWrong = false;
 
-                inputView.AskToUseGameControl();
+                _inputView.AskToUseGameControl();
 
-                KeyInfo = Console.ReadKey(true);
+                _keyInfo = Console.ReadKey(true);
 
 
-                switch (KeyInfo.Key)
+                switch (_keyInfo.Key)
                 {
                     case ConsoleKey.S:
                         System.Environment.Exit(0);
                         break;
                     case ConsoleKey.R:
-                        maze.ResetMaze();
-                        outputView.resetGameProces(maze);
+                        _maze.ResetMaze();
+
                         break;
-                
+
                     case ConsoleKey.UpArrow:
                         MoveTruckUp();
-                        outputView.resetGameProces(maze);
+
                         break;
                     case ConsoleKey.DownArrow:
                         MoveTruckDown();
-                        outputView.resetGameProces(maze);
+
                         break;
                     case ConsoleKey.LeftArrow:
                         MoveTruckLeft();
-                        outputView.resetGameProces(maze);
+
                         break;
                     case ConsoleKey.RightArrow:
                         MoveTruckRight();
-                        outputView.resetGameProces(maze);
+
                         break;
 
                     default:
-                        
-                        inputView.ShowWrongInput();
+                        inputIsWrong = true;
+                        _inputView.ShowWrongInput();
                         break;
                 }
 
-            
+                if (!inputIsWrong)
+                {
+                    _outputView.ShowGameProces(_maze);
+                }
+
 
             }
         }
 
 
-    
+
 
         private void MoveTruckUp()
         {
@@ -144,17 +150,17 @@ namespace Sokoban.Controller
 
         private void MoveTruckDown()
         {
-        
+
         }
 
         private void MoveTruckLeft()
         {
-       
+
         }
 
         private void MoveTruckRight()
         {
-       
+
         }
 
 
