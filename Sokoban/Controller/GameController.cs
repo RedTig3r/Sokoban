@@ -28,9 +28,12 @@ namespace Sokoban.Controller
 
         private void StartGame()
         {
+            int num = 1;
+
             //first view of the game
             _outputView.ShowGameInfo();
-            this.SelectMazeInput();
+            num = this._inputView.AskToSelectMaze();
+            //this.SelectMazeInput();
          
             _outputView.ShowGameProces(_maze);
             this.GameControlInput();
@@ -62,17 +65,12 @@ namespace Sokoban.Controller
                         return;
                     case "2":
                         _maze = new Maze(2);
-
                         return;
                     case "3":
-
                         _maze = new Maze(3);
-
                         return;
                     case "4":
-
                         _maze = new Maze(4);
-
                         return;
 
                     default:

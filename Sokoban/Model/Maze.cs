@@ -16,7 +16,7 @@ namespace Sokoban
 
 
        
-        public Maze(int mazeNumber)
+        public Maze()
         {
 
             _mazeNumber = mazeNumber;
