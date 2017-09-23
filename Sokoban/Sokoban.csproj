@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\FileReader.cs" />
+    <Compile Include="GameObjectType.cs" />
     <Compile Include="Model\Crate.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Model\Floor.cs" />
