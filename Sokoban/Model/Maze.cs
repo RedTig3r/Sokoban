@@ -18,5 +18,16 @@ namespace Sokoban
         {
 
         }
+
+
+        public void ResetMaze()
+        {
+
+        }
+
+        internal void ShowMaze()
+        {
+            System.Console.WriteLine("maze");
+        }
     }
 }

@@ -47,19 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\FileReader.cs" />
-    <Compile Include="Controller\MainClass.cs" />
     <Compile Include="Model\Crate.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Model\Floor.cs" />
-    <Compile Include="Model\GameController.cs" />
+    <Compile Include="Controller\GameController.cs" />
     <Compile Include="Model\Maze.cs" />
     <Compile Include="Model\Tile.cs" />
     <Compile Include="Model\Truck.cs" />
     <Compile Include="Model\Wall.cs" />
-    <Compile Include="Controller\Pijltoetsen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Input.cs" />
     <Compile Include="View\InputView.cs" />
     <Compile Include="View\OutputView.cs" />
   </ItemGroup>

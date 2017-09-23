@@ -8,6 +8,5 @@ namespace Sokoban
 {
     public class Crate
     {
-        private Tile tile;
     }
 }

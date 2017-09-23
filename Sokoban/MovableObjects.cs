@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class MainClass
+    abstract class MovableObjects : GameObject
     {
     }
 }

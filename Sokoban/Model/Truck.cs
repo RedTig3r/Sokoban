@@ -6,8 +6,7 @@ using System.Text;
 namespace Sokoban
 {
     public class Truck
-    {
-    
+    { 
         public Truck()
         {
 

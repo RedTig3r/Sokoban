@@ -5,11 +5,9 @@ using System.Text;
 
 namespace Sokoban
 {
-    public enum Pijltoetsen
+    public class GameObject
     {
-        omhoog,
-        omlaag,
-        naar_links,
-        naar_rechts
+        public int location;
+
     }
 }

@@ -10,33 +10,20 @@
       <FileName>Controller\FileReader.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.MainClass">
-    <Position X="2.25" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controller\MainClass.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sokoban.Model.GameController">
+  <Class Name="Sokoban.Controller.GameController" Collapsed="true">
     <Position X="5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AkAQAAAAAAECAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\GameController.cs</FileName>
+      <HashCode>AkAQAAAAAAEAAAAAAAAAAAAiAAAEAAQAACAAAAAAAAA=</HashCode>
+      <FileName>Controller\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="maze" />
       <Field Name="inputView" />
       <Field Name="outputView" />
+      <Field Name="maze" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Maze">
-    <Position X="5" Y="3.75" Width="1.5" />
-    <AssociationLine Name="vak" Type="Sokoban.Tile" FixedFromPoint="true">
-      <Path>
-        <Point X="5.812" Y="4.853" />
-        <Point X="5.812" Y="6" />
-      </Path>
-    </AssociationLine>
+    <Position X="5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAEAAAAABAAAAAAAAAAAAoAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Maze.cs</FileName>
@@ -56,45 +43,35 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall" Collapsed="true">
-    <Position X="3.25" Y="7.25" Width="1.5" />
+    <Position X="3.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Tile" Collapsed="true">
-    <Position X="5" Y="6" Width="1.5" />
+    <Position X="5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Floor" Collapsed="true">
-    <Position X="5" Y="7.25" Width="1.5" />
+    <Position X="5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Crate">
-    <Position X="8" Y="5" Width="1.5" />
-    <AssociationLine Name="tile" Type="Sokoban.Tile" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="8.625" Y="5.868" />
-        <Point X="8.625" Y="6.312" />
-        <Point X="6.5" Y="6.312" />
-      </Path>
-    </AssociationLine>
+    <Position X="7.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Crate.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="tile" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Destination" Collapsed="true">
-    <Position X="7" Y="7.25" Width="1.5" />
+    <Position X="7" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
@@ -110,16 +87,16 @@
   <Class Name="Sokoban.InputView">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\InputView.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Sokoban.EnumPijlen" Collapsed="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+  <Class Name="Sokoban.Program">
+    <Position X="10.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAALQAAAAQAAAAAABAAAAAAIAAAAAEAACAAQA=</HashCode>
-      <FileName>Input.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
