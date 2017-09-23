@@ -38,12 +38,7 @@ namespace Sokoban
                 case ConsoleKey.LeftArrow:
                     return Input.Left;
 
-
-                case ConsoleKey.RightArrow:
-                    return Input.Right;
-                default:
-                    return Input.Wrong;
-            }
+            System.Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
         }
         public int AskToSelectMazeInput()
         {

@@ -11,7 +11,7 @@ namespace Sokoban
     {
         static void Main(string[] args)
         {
-            GameController g = new GameController();
+           GameController g = new GameController();
            
       
         }
