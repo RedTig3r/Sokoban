@@ -5,13 +5,15 @@ using System.Text;
 
 namespace Sokoban
 {
-    public enum TileTypes
+    public enum Input
     {
-        Wall,
-        Floor,
-        Crate,
-        CrateDestination,
-        EmptySpot
-      
+        Up,
+        Down,
+        Left,
+        Right,
+        S,
+        R,
+        Wrong,
+
     }
 }

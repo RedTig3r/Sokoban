@@ -40,12 +40,19 @@ namespace Sokoban
             System.Console.WriteLine("________________________________________________________");
 
 
-            maze.ShowMaze();
+            this.ShowMaze(maze);
 
 
 
             System.Console.WriteLine("________________________________________________________|");
     
+        }
+
+
+
+        public void ShowMaze(Maze maze)
+        {
+            System.Console.WriteLine("Maze");
         }
 
     }

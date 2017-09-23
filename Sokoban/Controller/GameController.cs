@@ -12,7 +12,6 @@ namespace Sokoban.Controller
         private InputView _inputView;
         private OutputView _outputView;
         private Maze _maze;
-        private ConsoleKeyInfo _keyInfo;
         private bool _gameIsFinish;
 
 
@@ -30,138 +29,129 @@ namespace Sokoban.Controller
         {
             //first view of the game
             _outputView.ShowGameInfo();
-            this.SelectMazeInput();
-         
-            _outputView.ShowGameProces(_maze);
-            this.GameControlInput();
+
+            int mazeNumber = 0;
+            Input askInput;
+            bool inputIsCorrect = false;
+
+
+
+            while (inputIsCorrect != true)
+            {
+                mazeNumber = _inputView.AskToSelectMazeInput();
+
+                if (mazeNumber == -1)
+                {
+                    _gameIsFinish = true;
+                    inputIsCorrect = true;
+                    Environment.Exit(0);
+
+                }
+                else if (mazeNumber > 0 && mazeNumber < 5)
+                {
+                    _maze = new Maze(mazeNumber);
+                    inputIsCorrect = true;
+                }else
+                {
+                    _inputView.ShowWrongInput();
+                    inputIsCorrect = false;
+                }
+
+            }
+
+            while (_gameIsFinish != true)
+            {
+                inputIsCorrect = false;
+                _outputView.ShowGameProces(_maze);
+        
+
+                while (inputIsCorrect != true)
+                {
+                    askInput = _inputView.AskGameControlInput();
+
+                    switch (askInput)
+                    {
+                        case Input.S:
+                            _gameIsFinish = true;
+                            inputIsCorrect = true;
+                            Environment.Exit(0);
+                            break;
+                        case Input.R:
+                            _maze.ResetMaze();
+
+                            inputIsCorrect = true;
+                            break;
+                        case Input.Up:
+
+                            inputIsCorrect = true;
+                            break;
+                        case Input.Down:
+
+                            inputIsCorrect = true;
+                            break;
+                        case Input.Left:
+
+                            inputIsCorrect = true;
+                            break;
+                        case Input.Right:
+
+                            inputIsCorrect = true;
+                            break;
+                        default:
+                            _inputView.ShowWrongInput();
+                            inputIsCorrect = false;
+                            break;
+
+                    }
+
+                }
+              
+               
+            }
+
+
+
+           
+
+
+
+
 
             _inputView.AskToPressKeyToStartOver();
-            System.Console.ReadKey();
             this.StartGame();
 
         }
 
 
 
-        private void SelectMazeInput()
-        {
-            while (true)
-            {
-
-                _inputView.AskToSelectMaze();
-
-                this._keyInfo = Console.ReadKey(true);
-
-                switch (_keyInfo.KeyChar.ToString().ToLower())
-                {
-                    case "s":
-                        Environment.Exit(0);
-                        return;
-                    case "1":
-                        _maze = new Maze(1);
-                        return;
-                    case "2":
-                        _maze = new Maze(2);
-
-                        return;
-                    case "3":
-
-                        _maze = new Maze(3);
-
-                        return;
-                    case "4":
-
-                        _maze = new Maze(4);
-
-                        return;
-
-                    default:
-                        _inputView.ShowWrongInput();
-                        break;
-                }
-
-            }
-        }
 
 
-        private void GameControlInput()
+
+        private void MoveTruck(Input direction)
         {
 
-            bool inputIsWrong;
-
-            while (_gameIsFinish != true)
+            switch (direction)
             {
-                inputIsWrong = false;
+                case Input.Up:
 
-                _inputView.AskToUseGameControl();
+                    break;
+                case Input.Down:
 
-                _keyInfo = Console.ReadKey(true);
+                    break;
+                case Input.Right:
 
+                    break;
+                case Input.Left:
 
-                switch (_keyInfo.Key)
-                {
-                    case ConsoleKey.S:
-                        System.Environment.Exit(0);
-                        break;
-                    case ConsoleKey.R:
-                        _maze.ResetMaze();
-
-                        break;
-
-                    case ConsoleKey.UpArrow:
-                        MoveTruckUp();
-
-                        break;
-                    case ConsoleKey.DownArrow:
-                        MoveTruckDown();
-
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        MoveTruckLeft();
-
-                        break;
-                    case ConsoleKey.RightArrow:
-                        MoveTruckRight();
-
-                        break;
-
-                    default:
-                        inputIsWrong = true;
-                        _inputView.ShowWrongInput();
-                        break;
-                }
-
-                if (!inputIsWrong)
-                {
-                    _outputView.ShowGameProces(_maze);
-                }
+                    break;
 
 
             }
-        }
 
 
-
-
-        private void MoveTruckUp()
-        {
 
         }
 
-        private void MoveTruckDown()
-        {
-
-        }
-
-        private void MoveTruckLeft()
-        {
-
-        }
-
-        private void MoveTruckRight()
-        {
-
-        }
 
 
 

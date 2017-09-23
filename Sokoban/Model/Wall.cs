@@ -8,14 +8,23 @@ namespace Sokoban
 {
     public class Wall : Tile
     {
-        public Wall()
+        public Wall(TileTypes tileType) : base(tileType)
         {
-          this._icon = '█';
         }
 
         public override bool CanEnter()
         {
              return false;
+        }
+
+        public override bool DeleteCrate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void DeleteTruck()
+        {
+            throw new NotImplementedException();
         }
     }
 }

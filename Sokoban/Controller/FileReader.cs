@@ -16,7 +16,7 @@ namespace Sokoban
 
         internal void CreateTiles()
         {
-            throw new NotImplementedException();
+          
         }
     }
 }

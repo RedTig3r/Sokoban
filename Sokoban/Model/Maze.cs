@@ -12,7 +12,7 @@ namespace Sokoban
         private FileReader _fileReader;
 
         private Truck _Truck;
-        private Crate _Crate;
+        private List<Crate> _Crate;
 
 
        
@@ -35,7 +35,7 @@ namespace Sokoban
 
         public void ShowMaze()
         {
-            throw new NotImplementedException();
+          
         }
     }
 }
