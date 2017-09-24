@@ -8,7 +8,7 @@ namespace Sokoban
     public abstract class Tile
     {
 
-        protected char _icon;
+        public TileTypes tileType;
 
         public Crate tileCrate;
         public Truck tileTruck;
@@ -22,7 +22,7 @@ namespace Sokoban
         public Tile UpTile;
         public Tile DownTile;
 
-        public TileTypes tileType;
+
 
         public Tile(TileTypes tileType)
         {
@@ -32,7 +32,7 @@ namespace Sokoban
         public abstract bool CanEnter();
 
 
-        public abstract bool DeleteCrate();
+        public abstract void DeleteCrate();
 
         public abstract void DeleteTruck();
     }

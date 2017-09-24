@@ -10,6 +10,7 @@ namespace Sokoban
     {
         public Destination(TileTypes tileType) : base(tileType)
         {
+            this.tileType = tileType;
         }
 
         public override bool CanEnter()
@@ -17,14 +18,14 @@ namespace Sokoban
             return true;
         }
 
-        public override bool DeleteCrate()
+        public override void DeleteCrate()
         {
-            throw new NotImplementedException();
+            this.tileCrate = null;
         }
 
         public override void DeleteTruck()
         {
-            throw new NotImplementedException();
+            this.tileTruck = null;
         }
     }
 }

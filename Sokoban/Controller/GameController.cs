@@ -12,6 +12,7 @@ namespace Sokoban.Controller
         private InputView _inputView;
         private OutputView _outputView;
         private Maze _maze;
+        private int _mazeNumber;
         private bool _gameIsFinish;
 
         public GameController()
@@ -28,21 +29,21 @@ namespace Sokoban.Controller
 
             //first view of the game
             _outputView.ShowGameInfo();
-            int mazeNumber = 0;
+           
             int askInput;
             bool inputIsCorrect = false;
 
             while (inputIsCorrect != true)
             {
-                mazeNumber = _inputView.AskToSelectMazeInput();
+                _mazeNumber = _inputView.AskToSelectMazeInput();
 
-                if (mazeNumber == -1)
+                if (_mazeNumber == -1)
                 {
                     Environment.Exit(0);
                 }
-                else if (mazeNumber > 0 && mazeNumber < 5)
+                else if (_mazeNumber > 0 && _mazeNumber < 5)
                 {
-                    _maze = new Sokoban.Maze(mazeNumber);
+                    _maze = new Maze(_mazeNumber);
                     inputIsCorrect = true;
                 }
                 else
@@ -79,8 +80,7 @@ namespace Sokoban.Controller
                         }
                         else if (askInput == -1)
                         {
-
-                            _maze.ResetMaze();
+                            _maze = new Maze(_mazeNumber);
                         }
                         else
                         {
@@ -92,18 +92,13 @@ namespace Sokoban.Controller
 
                 }
 
-
+                _gameIsFinish = _maze.gameIsFinished();
             }
 
             _inputView.AskToPressKeyToStartOver();
             this.StartGame();
 
         }
-
-
-
-
-
 
         private void MoveTruck(int direction)
         {
