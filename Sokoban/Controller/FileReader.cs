@@ -8,27 +8,23 @@ namespace Sokoban
 {
     public class FileReader
     {
-        private Maze maze;
-        private FileStream input;
-        private StreamReader reader;
-        private string fileName;
+        private Maze _maze;
+        private FileStream _input;
+        private StreamReader _reader;
+        private string _fileName;
         private int _inputFileReaderNumber;
 
-        public FileReader(int inputFileReaderNumber)
+
+        
+
+        public Maze CreateMaze(int _mazeNumber)
         {
-            this._inputFileReaderNumber = inputFileReaderNumber;
+            return new Maze();
         }
 
-        public Maze LoadMaze(int nummer)
+        public Maze ResetMaze()
         {
-         
-            this.maze = new Maze(nummer);
-            return maze;
-        }
-
-        internal void CreateTiles()
-        {
-          
+            return _maze;
         }
     }
 }

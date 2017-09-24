@@ -11,6 +11,7 @@ namespace Sokoban.Controller
     {
         private InputView _inputView;
         private OutputView _outputView;
+        private FileReader _fileReader;
         private Maze _maze;
         private int _mazeNumber;
         private bool _gameIsFinish;
@@ -19,6 +20,7 @@ namespace Sokoban.Controller
         {
             this._inputView = new InputView();
             this._outputView = new OutputView();
+            this._fileReader = new FileReader();
             this._gameIsFinish = false;
             this.StartGame();
 
@@ -43,7 +45,9 @@ namespace Sokoban.Controller
                 }
                 else if (_mazeNumber > 0 && _mazeNumber < 5)
                 {
-                    _maze = new Maze(_mazeNumber);
+
+                    _maze = _fileReader.CreateMaze(_mazeNumber);
+                  
                     inputIsCorrect = true;
                 }
                 else
@@ -64,7 +68,6 @@ namespace Sokoban.Controller
                 {
                     askInput = _inputView.AskGameControlInput();
 
-
                     if (askInput == 0)
                     {
                         _inputView.ShowWrongInput();
@@ -75,16 +78,15 @@ namespace Sokoban.Controller
 
                         if (askInput == -2)
                         {
-                            Environment.Exit(0);
-                  
+                            _maze = _fileReader.ResetMaze();
                         }
                         else if (askInput == -1)
                         {
-                            _maze = new Maze(_mazeNumber);
+                            Environment.Exit(0);
                         }
                         else
                         {
-                            this.MoveTruck(askInput);
+                            _maze.MoveTruck(askInput);
                         }
 
                         inputIsCorrect = true;
@@ -100,30 +102,7 @@ namespace Sokoban.Controller
 
         }
 
-        private void MoveTruck(int direction)
-        {
-
-            switch (direction)
-            {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-
-
-            }
-
-
-
-        }
+       
 
 
 

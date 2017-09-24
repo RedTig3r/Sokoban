@@ -52,7 +52,7 @@ namespace Sokoban
 
         public void ShowMaze(Maze maze)
         {
-            System.Console.WriteLine("Maze");
+            System.Console.WriteLine("Maze info");
         }
 
     }

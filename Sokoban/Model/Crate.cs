@@ -12,8 +12,8 @@ namespace Sokoban
     public class Crate 
     {
 
-        public Tile _tileLocation;
-        public bool _standsOnTileDirection;
+        private Tile _tileLocation;
+        private bool _standsOnTileDirection;
 
         public Crate(Tile tileLocation)
         {

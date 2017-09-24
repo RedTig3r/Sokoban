@@ -8,30 +8,25 @@ namespace Sokoban
     public class Maze
     {
         private Tile _firstTile;
-        private int _mazeNumber;
-        private FileReader _fileReader;
-
         private Truck _Truck;
         private List<Crate> _CrateList;
+        private int _mazeHeight;
+        private int _mazeWidth;
 
 
 
-        public Maze(int mazeNumber)
-        {
-
-            _mazeNumber = mazeNumber;
-            _fileReader = new FileReader(mazeNumber);
-
-
-
-            _fileReader.CreateTiles();
+        public Maze()
+       {
+            
         }
 
 
-        public void ResetMaze()
-        {
 
+        public void MoveTruck(int direction)
+        {
+            _Truck.MoveTruck(direction);
         }
+
 
         public bool gameIsFinished()
         {
@@ -57,5 +52,7 @@ namespace Sokoban
             }
 
         }
+
+      
     }
 }

@@ -15,7 +15,15 @@ namespace Sokoban
 
         public override bool CanEnter()
         {
-            return true;
+            if(this.tileTruck == null & this.tileCrate == null)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+
+          
         }
 
         public override void DeleteCrate()
