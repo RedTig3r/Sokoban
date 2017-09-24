@@ -12,7 +12,7 @@ namespace Sokoban
 
         private ConsoleKeyInfo _keyInfo;
 
-        public Input AskGameControlInput()
+        public int AskGameControlInput()
         {
             System.Console.WriteLine("> gebruik pijljestoetsen (s = stop, r = reset)");
 
@@ -21,31 +21,23 @@ namespace Sokoban
             switch (_keyInfo.Key)
             {
                 case ConsoleKey.S:
-                    return Input.S;
+                    return -1;
                 case ConsoleKey.R:
-                    return Input.R;
-
-
+                    return -2;
                 case ConsoleKey.UpArrow:
-                    return Input.Up;
-
-
+                    return 1;
                 case ConsoleKey.DownArrow:
-                    return Input.Down;
-
-
+                    return 2;
                 case ConsoleKey.LeftArrow:
-                    return Input.Left;
-
+                    return 3;
                 case ConsoleKey.RightArrow:
-                    return Input.Left;
+                    return 4;
                 default:
-                    return Input.Wrong;
+                    return 0;
             }
         }
         public int AskToSelectMazeInput()
         {
-
 
             System.Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
 
@@ -54,31 +46,17 @@ namespace Sokoban
             switch (_keyInfo.KeyChar.ToString().ToLower())
             {
                 case "s":
-                    Environment.Exit(0);
                     return -1;
                 case "1":
                     return 1;
-
                 case "2":
-
-
                     return 2;
                 case "3":
-
-
-
                     return 3;
                 case "4":
-
-
-
                     return 4;
-
                 default:
-
                     return 0;
-
-
             }
         }
 

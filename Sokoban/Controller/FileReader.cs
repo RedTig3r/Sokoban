@@ -23,11 +23,6 @@ namespace Sokoban
         {
          
             this.maze = new Maze(nummer);
-
-
-
-
-
             return maze;
         }
 

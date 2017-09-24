@@ -14,8 +14,6 @@ namespace Sokoban.Controller
         private Maze _maze;
         private bool _gameIsFinish;
 
-
-
         public GameController()
         {
             this._inputView = new InputView();
@@ -27,15 +25,12 @@ namespace Sokoban.Controller
 
         private void StartGame()
         {
-        
+
             //first view of the game
             _outputView.ShowGameInfo();
-
             int mazeNumber = 0;
-            Input askInput;
+            int askInput;
             bool inputIsCorrect = false;
-
-
 
             while (inputIsCorrect != true)
             {
@@ -44,13 +39,11 @@ namespace Sokoban.Controller
                 if (mazeNumber == -1)
                 {
                     Environment.Exit(0);
-
                 }
                 else if (mazeNumber > 0 && mazeNumber < 5)
                 {
                     _maze = new Sokoban.Maze(mazeNumber);
                     inputIsCorrect = true;
-
                 }
                 else
                 {
@@ -58,12 +51,7 @@ namespace Sokoban.Controller
                     inputIsCorrect = false;
                 }
 
-
-
-
             }
-
-
 
             while (_gameIsFinish != true)
             {
@@ -75,39 +63,31 @@ namespace Sokoban.Controller
                 {
                     askInput = _inputView.AskGameControlInput();
 
-                    switch (askInput)
+
+                    if (askInput == 0)
                     {
-                        case Input.S:
-                            _gameIsFinish = true;
-                            inputIsCorrect = true;
+                        _inputView.ShowWrongInput();
+                        inputIsCorrect = false;
+                    }
+                    else
+                    {
+
+                        if (askInput == -2)
+                        {
                             Environment.Exit(0);
-                            break;
-                        case Input.R:
+                  
+                        }
+                        else if (askInput == -1)
+                        {
+
                             _maze.ResetMaze();
+                        }
+                        else
+                        {
+                            this.MoveTruck(askInput);
+                        }
 
-                            inputIsCorrect = true;
-                            break;
-                        case Input.Up:
-
-                            inputIsCorrect = true;
-                            break;
-                        case Input.Down:
-
-                            inputIsCorrect = true;
-                            break;
-                        case Input.Left:
-
-                            inputIsCorrect = true;
-                            break;
-                        case Input.Right:
-
-                            inputIsCorrect = true;
-                            break;
-                        default:
-                            _inputView.ShowWrongInput();
-                            inputIsCorrect = false;
-                            break;
-
+                        inputIsCorrect = true;
                     }
 
                 }
@@ -125,21 +105,21 @@ namespace Sokoban.Controller
 
 
 
-        private void MoveTruck(Input direction)
+        private void MoveTruck(int direction)
         {
 
             switch (direction)
             {
-                case Input.Up:
+                case 1:
 
                     break;
-                case Input.Down:
+                case 2:
 
                     break;
-                case Input.Right:
+                case 3:
 
                     break;
-                case Input.Left:
+                case 4:
 
                     break;
 
