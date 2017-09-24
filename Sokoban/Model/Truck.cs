@@ -8,36 +8,20 @@ namespace Sokoban
     public class Truck 
     {
 
-        public Tile _truckTile;
+        public Tile StandsOnTile;
 
-        public Truck(Tile truckTile)
+        public Truck(Tile StandsOnTile)
         {
-            this._truckTile = truckTile;
+            this.StandsOnTile = StandsOnTile;
         }
 
         public void MoveTruck(int direction)
         {
-
-            switch (direction)
+            Tile tile = StandsOnTile.MoveTruck(direction);
+            if (tile != null)
             {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-
-
+                StandsOnTile = tile;
             }
-
-
-
         }
 
 

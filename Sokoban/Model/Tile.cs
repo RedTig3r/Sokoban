@@ -8,10 +8,10 @@ namespace Sokoban
     public abstract class Tile
     {
 
-        protected TileTypes tileType;
+        protected TileTypes tileType { get; set; }
 
-        public Crate tileCrate;
-        public Truck tileTruck;
+        public Crate TileCrate;
+        public Truck TileTruck;
 
         public bool HasCrate { get; }
         public bool HasTruck { get; }
@@ -28,11 +28,6 @@ namespace Sokoban
             this.tileType = tileType;
         }
 
-        public TileTypes getTileType()
-        {
-            return this.tileType;
-        }
-
         public abstract bool CanEnter();
 
 
@@ -40,6 +35,15 @@ namespace Sokoban
 
         public abstract void DeleteTruck();
 
+
+        public abstract Tile MoveTruck(int direction);
+
+
+        public abstract void MoveCrate(int direction);
+
+        public abstract void ChangeCrateTile(Crate crate);
+
+        public abstract void ChangeTruckTile(Truck truck);
     }
 
 }

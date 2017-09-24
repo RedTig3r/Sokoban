@@ -16,18 +16,41 @@ namespace Sokoban
 
         public override bool CanEnter()
         {
-             return false;
+                return false;
+        }
+
+        public override void ChangeCrateTile(Crate crate)
+        {
+            this.TileCrate = crate;
+        }
+
+        public override void ChangeTruckTile(Truck truck)
+        {
+            this.TileTruck = truck;
         }
 
 
         public override void DeleteCrate()
         {
-            this.tileCrate = null;
+            this.TileCrate = null;
         }
 
         public override void DeleteTruck()
         {
-            this.tileTruck = null;
+            this.TileTruck = null;
+        }
+
+        public override Tile MoveTruck(int direction)
+        {
+            return null;
+
+        }
+
+        public override void MoveCrate(int direction)
+        {
+
+            return;
+
         }
     }
 }
