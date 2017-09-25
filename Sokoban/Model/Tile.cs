@@ -22,7 +22,6 @@ namespace Sokoban
         public Tile DownTile { get; set; }
 
 
-
         public Tile(TileTypes tileType)
         {
             this.tileType = tileType;
