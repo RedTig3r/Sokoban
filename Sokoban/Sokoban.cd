@@ -36,28 +36,28 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Model\Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall" Collapsed="true">
     <Position X="22" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Tile" Collapsed="true">
     <Position X="24.25" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>QAAADAAAAAAAAAIAAABAAAAIAEIABAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>QAAADAAAAAAAAAIAAABAAAAAAEIBBAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Destination" Collapsed="true">
     <Position X="26.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -85,7 +85,7 @@
   <Class Name="Sokoban.Crate" Collapsed="true">
     <Position X="17.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAAACCEAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Model\Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -100,7 +100,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAgA=</HashCode>
       <FileName>Model\TileObject.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -114,14 +114,14 @@
   <Class Name="Sokoban.EmptySpot" Collapsed="true">
     <Position X="24" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\EmptySpot.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Floor" Collapsed="true">
     <Position X="28.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>

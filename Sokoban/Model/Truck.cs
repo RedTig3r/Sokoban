@@ -8,17 +8,16 @@ namespace Sokoban
     public class Truck : ObjectOnTile
     {
 
-        public Tile StandsOnTile;
 
         public Truck(Tile StandsOnTile)
         {
             this.StandsOnTile = StandsOnTile;
         }
 
- 
+
         public override void MoveObject(int direction)
         {
-            /*
+
             Tile tile = null;
             switch (direction)
             {
@@ -35,18 +34,27 @@ namespace Sokoban
                     tile = StandsOnTile.RightTile;
                     break;
             }
-            if (tile != null && tile.CanEnter() == true)
+            if (tile != null)
             {
+                if (tile.hasCrate == true)
+                {
+                    tile.ObjectOnTile.MoveObject(direction);
+                    tile.GetTileDirection(direction).hasCrate = true;
 
-                tile.ChangeObjectOnTile(this);
-                StandsOnTile = tile;
-                this.StandsOnTile.DeleteObjectOnTile();
+                }
+
+                 if (tile.CanEnter() == true)
+                {
+                    tile.ChangeObjectOnTile(this);
+                    StandsOnTile.DeleteObjectOnTile();
+                    StandsOnTile = tile;
+                    this.StandsOnTile.DeleteObjectOnTile();
+                }
+                
+               
+                
             }
-            else
-            {
-                return null;
-            }
-            */
+
         }
 
         public override char getGameObjectCharacter()

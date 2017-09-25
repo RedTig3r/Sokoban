@@ -8,10 +8,9 @@ namespace Sokoban
     public abstract class Tile: GameObjects
     {
 
-        public GameObjects ObjectOnTile;
+        public ObjectOnTile ObjectOnTile;
 
-        public bool HasCrate { get; }
-        public bool HasTruck { get; }
+        public bool hasCrate { get; set; }
 
         public Tile RightTile { get; set; }
         public Tile LeftTile { get; set; }
@@ -25,7 +24,7 @@ namespace Sokoban
 
         public abstract void ChangeObjectOnTile(ObjectOnTile objectOnTile);
 
-
+        public abstract Tile GetTileDirection(int direction);
     }
 
 }

@@ -29,5 +29,32 @@ namespace Sokoban
         {
             return '█';
         }
+
+        public override Tile GetTileDirection(int direction)
+        {
+
+            Tile tile = null;
+
+            switch (direction)
+            {
+                case 1:
+                    tile = this.UpTile;
+                    break;
+                case 2:
+                    tile = this.DownTile;
+                    break;
+                case 3:
+                    tile = this.LeftTile;
+                    break;
+                case 4:
+                    tile = this.RightTile;
+                    break;
+                default:
+                    tile = null;
+                    break;
+            }
+
+            return tile;
+        }
     }
 }

@@ -26,10 +26,6 @@ namespace Sokoban
         public bool gameIsFinished()
         {
 
-
-            return false;
-
-
             int amountOfCrates = this._CrateList.Count;
             int x = 0;
             foreach (Crate crate in this._CrateList)

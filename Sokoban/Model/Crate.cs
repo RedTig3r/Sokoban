@@ -12,48 +12,41 @@ namespace Sokoban
     public class Crate : ObjectOnTile
     {
 
-        private Tile _tileLocation;
-        private bool _standsOnTileDirection;
-
-        public Crate(Tile tileLocation)
+        public Crate(Tile standsOnTile)
         {
-            _tileLocation = tileLocation;
+            StandsOnTile = standsOnTile;
 
 
         }
 
         public override void MoveObject(int direction)
         {
-/*
+
             Tile tile = null;
             switch (direction)
             {
                 case 1:
-                    tile = this.UpTile;
+                    tile = StandsOnTile.UpTile;
                     break;
                 case 2:
-                    tile = this.DownTile;
+                    tile = StandsOnTile.DownTile;
                     break;
                 case 3:
-                    tile = this.LeftTile;
+                    tile = StandsOnTile.LeftTile;
                     break;
                 case 4:
-                    tile = this.RightTile;
+                    tile = StandsOnTile.RightTile;
                     break;
             }
-            if (tile != null)
+            if (tile != null && tile.CanEnter() == true)
             {
 
-                if (tile.CanEnter() == true)
-                {
-                    tile.MoveCrate(direction);
-                }
-
-                tile.ChangeCrateTile(this.TileCrate);
-                this.DeleteCrate();
+                tile.ChangeObjectOnTile(this);
+                StandsOnTile.DeleteObjectOnTile();
+                StandsOnTile = tile;
+              
 
             }
-*/
         }
 
         public bool getStandsOnTileDirection()
@@ -61,7 +54,8 @@ namespace Sokoban
             if (this.gameObjectCharacter == '0')
             {
                 return true;
-            }else
+            }
+            else
             {
 
                 return false;
@@ -70,13 +64,13 @@ namespace Sokoban
 
         public override char getGameObjectCharacter()
         {
-            if (this._tileLocation.gameObjectCharacter == 'X')
+            if (this.StandsOnTile.gameObjectCharacter == 'X')
             {
                 return '0';
             }
             else
             {
-                return '0';
+                return 'O';
             }
         }
     }
