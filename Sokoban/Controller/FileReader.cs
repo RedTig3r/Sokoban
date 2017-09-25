@@ -15,8 +15,6 @@ namespace Sokoban
         private int _inputFileReaderNumber;
 
 
-        
-
         public Maze CreateMaze(int _mazeNumber)
         {
             return new Maze();

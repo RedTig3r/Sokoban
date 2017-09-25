@@ -29,7 +29,6 @@ namespace Sokoban.Controller
         private void StartGame()
         {
 
-            //first view of the game
             _outputView.ShowGameInfo();
            
             int askInput;

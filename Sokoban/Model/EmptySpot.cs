@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    public class Wall : Tile
+    public class EmptySpot : Tile
     {
-
         public override bool CanEnter()
         {
+      
                 return false;
+         
+
+
         }
 
         public override void ChangeObjectOnTile(ObjectOnTile objectOnTile)
@@ -24,10 +26,12 @@ namespace Sokoban
             this.ObjectOnTile = null;
         }
 
-
         public override char getGameObjectCharacter()
         {
-            return '█';
+            return ' ';
         }
+
+       
+
     }
 }

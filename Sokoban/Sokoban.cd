@@ -19,8 +19,8 @@
     <ShowAsAssociation>
       <Field Name="_inputView" />
       <Field Name="_outputView" />
-      <Field Name="_maze" />
       <Field Name="_fileReader" />
+      <Field Name="_maze" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Maze">
@@ -29,67 +29,47 @@
       <HashCode>AAAAAAAEAAAIAoAAAABQAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Maze.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_firstTile" />
-      <Field Name="_Truck" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Field Name="_CrateList" />
-    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Sokoban.Truck">
-    <Position X="6.25" Y="8.75" Width="1.5" />
+  <Class Name="Sokoban.Truck" Collapsed="true">
+    <Position X="20" Y="7.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAgA=</HashCode>
       <FileName>Model\Truck.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="StandsOnTile" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Wall">
-    <Position X="2.25" Y="16.5" Width="1.5" />
+  <Class Name="Sokoban.Wall" Collapsed="true">
+    <Position X="22" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAEAAACAAAIAQAAAAAEA=</HashCode>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Tile">
-    <Position X="4.75" Y="11.25" Width="2" />
+  <Class Name="Sokoban.Tile" Collapsed="true">
+    <Position X="24.25" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>QAEABAAAAAAICIAAAABAAAAIAEAABCAQAIAQAAAAAEI=</HashCode>
+      <HashCode>QAAADAAAAAAAAAIAAABAAAAIAEIABAAAAAAAAAAAAAI=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="tileType" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Floor">
-    <Position X="4.75" Y="16.5" Width="1.5" />
+  <Class Name="Sokoban.Destination" Collapsed="true">
+    <Position X="26.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAEAAACAAAIAQAAAAAEA=</HashCode>
-      <FileName>Model\Floor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sokoban.Destination">
-    <Position X="7.5" Y="16.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAEAAACAAAIAQAAAAAEA=</HashCode>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.OutputView">
-    <Position X="8.5" Y="0.75" Width="1.5" />
+    <Position X="6.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\OutputView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.InputView">
-    <Position X="1" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAgBAAAAAAAAACAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>View\InputView.cs</FileName>
@@ -102,22 +82,48 @@
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Crate">
-    <Position X="1.5" Y="8.5" Width="1.5" />
+  <Class Name="Sokoban.Crate" Collapsed="true">
+    <Position X="17.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAACCEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAACCEAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Model\Crate.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_tileLocation" />
-    </ShowAsAssociation>
   </Class>
-  <Enum Name="Sokoban.TileTypes">
-    <Position X="8.25" Y="12.25" Width="1.5" />
+  <Class Name="Sokoban.ObjectOnTile">
+    <Position X="18.75" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="Sokoban.GameObjects" FixedToPoint="true">
+      <Path>
+        <Point X="22.5" Y="4.555" />
+        <Point X="22.5" Y="5.125" />
+        <Point X="19.562" Y="5.125" />
+        <Point X="19.562" Y="5.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAABgAAAAAAAAAAABAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>TileTypes.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\TileObject.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
+  <Class Name="Sokoban.GameObjects">
+    <Position X="21.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GameObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.EmptySpot" Collapsed="true">
+    <Position X="24" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\EmptySpot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Floor" Collapsed="true">
+    <Position X="28.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAQAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Floor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

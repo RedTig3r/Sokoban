@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Sokoban
 {
-    public enum TileTypes
+    public abstract class ObjectOnTile: GameObjects
     {
-        Wall,
-        Floor,
-        Crate,
-        CrateDestination,
-        EmptySpot
-      
+
+
+        public abstract void MoveObject(int direction);
+
+
+
     }
 }

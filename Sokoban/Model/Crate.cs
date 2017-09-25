@@ -9,7 +9,7 @@ namespace Sokoban
 
 
 
-    public class Crate 
+    public class Crate : ObjectOnTile
     {
 
         private Tile _tileLocation;
@@ -22,29 +22,63 @@ namespace Sokoban
 
         }
 
-        public void MoveCrate(Tile tileLocation)
+        public override void MoveObject(int direction)
         {
-            if (tileLocation.CanEnter() == true)
+/*
+            Tile tile = null;
+            switch (direction)
             {
-              _tileLocation = tileLocation;
+                case 1:
+                    tile = this.UpTile;
+                    break;
+                case 2:
+                    tile = this.DownTile;
+                    break;
+                case 3:
+                    tile = this.LeftTile;
+                    break;
+                case 4:
+                    tile = this.RightTile;
+                    break;
             }
-         
+            if (tile != null)
+            {
+
+                if (tile.CanEnter() == true)
+                {
+                    tile.MoveCrate(direction);
+                }
+
+                tile.ChangeCrateTile(this.TileCrate);
+                this.DeleteCrate();
+
+            }
+*/
         }
 
         public bool getStandsOnTileDirection()
         {
-            if (_tileLocation.tileType == TileTypes.CrateDestination)
+            if (this.gameObjectCharacter == '0')
             {
-                _standsOnTileDirection = true;
-
-                return _standsOnTileDirection;
+                return true;
             }else
             {
-                _standsOnTileDirection = false;
-                return _standsOnTileDirection;
+
+                return false;
             }
         }
-    
+
+        public override char getGameObjectCharacter()
+        {
+            if (this._tileLocation.gameObjectCharacter == 'X')
+            {
+                return '0';
+            }
+            else
+            {
+                return '0';
+            }
+        }
     }
 }
 

@@ -15,27 +15,26 @@ namespace Sokoban
 
 
 
-        public Maze()
-       {
-            
-        }
-
 
 
         public void MoveTruck(int direction)
         {
-            _Truck.MoveTruck(direction);
+           // _Truck.MoveObject(direction);
         }
 
 
         public bool gameIsFinished()
         {
 
+
+            return false;
+
+
             int amountOfCrates = this._CrateList.Count;
             int x = 0;
             foreach (Crate crate in this._CrateList)
             {
-                if (crate._standsOnTileDirection == true)
+                if (crate.getStandsOnTileDirection() == true)
                 {
                     x++;
                 }

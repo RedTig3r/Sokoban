@@ -5,13 +5,10 @@ using System.Text;
 
 namespace Sokoban
 {
-    public abstract class Tile
+    public abstract class Tile: GameObjects
     {
 
-        protected TileTypes tileType { get; set; }
-
-        public Crate TileCrate;
-        public Truck TileTruck;
+        public GameObjects ObjectOnTile;
 
         public bool HasCrate { get; }
         public bool HasTruck { get; }
@@ -22,27 +19,13 @@ namespace Sokoban
         public Tile DownTile { get; set; }
 
 
-        public Tile(TileTypes tileType)
-        {
-            this.tileType = tileType;
-        }
-
         public abstract bool CanEnter();
 
+        public abstract void DeleteObjectOnTile();
 
-        public abstract void DeleteCrate();
-
-        public abstract void DeleteTruck();
-
-
-        public abstract Tile MoveTruck(int direction);
+        public abstract void ChangeObjectOnTile(ObjectOnTile objectOnTile);
 
 
-        public abstract void MoveCrate(int direction);
-
-        public abstract void ChangeCrateTile(Crate crate);
-
-        public abstract void ChangeTruckTile(Truck truck);
     }
 
 }

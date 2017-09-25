@@ -47,10 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\FileReader.cs" />
-    <Compile Include="TileTypes.cs" />
+    <Compile Include="Model\EmptySpot.cs" />
+    <Compile Include="Model\Floor.cs" />
+    <Compile Include="Model\GameObjects.cs" />
+    <Compile Include="Model\TileObject.cs" />
     <Compile Include="Model\Crate.cs" />
     <Compile Include="Model\Destination.cs" />
-    <Compile Include="Model\Floor.cs" />
     <Compile Include="Controller\GameController.cs" />
     <Compile Include="Model\Maze.cs" />
     <Compile Include="Model\Tile.cs" />
