@@ -9,7 +9,7 @@ namespace Sokoban
     {
         private Tile _firstTile;
         private Truck _Truck;
-        private List<Crate> _CrateList;
+        private List <Crate> _CrateList;
         private int _mazeHeight;
         private int _mazeWidth;
 
