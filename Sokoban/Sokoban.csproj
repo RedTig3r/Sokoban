@@ -67,6 +67,14 @@
     <None Include="App.config" />
     <None Include="Sokoban.cd" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doolhofs\doolhof1.txt" />
+    <Content Include="Doolhofs\doolhof2.txt" />
+    <Content Include="Doolhofs\doolhof3.txt" />
+    <Content Include="Doolhofs\doolhof4.txt" />
+    <Content Include="Doolhofs\doolhof5.txt" />
+    <Content Include="Doolhofs\doolhof6.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
