@@ -13,16 +13,24 @@ namespace Sokoban
         private int _mazeHeight;
         private int _mazeWidth;
 
-
-
-
-
-        public void MoveTruck(int direction)
+                
+        public void MoveTruck(Direction direction)
         {
-           // _Truck.MoveObject(direction);
+            try
+            {
+                
+            }
+            catch
+            {
+                throw new Exception("Truck kan niet verplaatst worden!");
+            }
         }
 
-
+        public Tile OriginTile { get; set; }
+        public Truck Truck { get; set; }
+        public int Width { get; set; }
+        public int Heigth { get; set; }
+        
         public bool gameIsFinished()
         {
 

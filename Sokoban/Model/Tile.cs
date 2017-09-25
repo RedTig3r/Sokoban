@@ -10,12 +10,24 @@ namespace Sokoban
 
         public ObjectOnTile ObjectOnTile;
 
-        public bool hasCrate { get; set; }
-
+     
+        public Kind kind { get; set; }
+        public Crate crate { get; set; }
+        public Truck truck { get; set; }
         public Tile RightTile { get; set; }
         public Tile LeftTile { get; set; }
         public Tile UpTile { get; set; }
         public Tile DownTile { get; set; }
+
+        public bool hasCrate
+        {
+            get { return this.crate != null; }
+        }
+
+        public bool hasTruck
+        {
+            get { return this.truck != null; }
+        }
 
 
         public abstract bool CanEnter();

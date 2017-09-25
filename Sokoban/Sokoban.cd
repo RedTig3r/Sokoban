@@ -3,7 +3,7 @@
   <Class Name="Sokoban.FileReader">
     <Position X="8.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAIAAAQAAAAAgAAAAACAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAIAAAQEAAAAgAAAAACAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Controller\FileReader.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -22,8 +22,8 @@
     <AssociationLine Name="_outputView" Type="Sokoban.OutputView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="5.625" Y="2.5" />
-        <Point X="5.625" Y="1.438" />
-        <Point X="7" Y="1.438" />
+        <Point X="5.625" Y="1.559" />
+        <Point X="7" Y="1.559" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.14" Y="0.046" />
@@ -44,7 +44,7 @@
     <Position X="5.5" Y="6.25" Width="1.5" />
     <AssociationLine Name="_firstTile" Type="Sokoban.Tile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.047" Y="8.19" />
+        <Point X="6.047" Y="9.219" />
         <Point X="6.047" Y="11.845" />
         <Point X="16.812" Y="11.845" />
         <Point X="16.812" Y="9.941" />
@@ -52,21 +52,21 @@
     </AssociationLine>
     <AssociationLine Name="_Truck" Type="Sokoban.Truck" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.656" Y="8.19" />
-        <Point X="6.656" Y="11" />
-        <Point X="8.75" Y="11" />
+        <Point X="6.656" Y="9.219" />
+        <Point X="6.656" Y="11.217" />
+        <Point X="8.75" Y="11.217" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="_CrateList" Type="Sokoban.Crate" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7" Y="7.266" />
-        <Point X="7.375" Y="7.266" />
+        <Point X="7" Y="7.805" />
+        <Point X="7.375" Y="7.805" />
         <Point X="7.375" Y="9.062" />
         <Point X="8.75" Y="9.062" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAIAoAAAABQAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAEAEAIAoAAAABQAEAAAAAAAAQAAAACAAAAAAA=</HashCode>
       <FileName>Model\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -86,12 +86,12 @@
       <Path>
         <Point X="12" Y="9.5" />
         <Point X="11.625" Y="9.5" />
-        <Point X="11.625" Y="11.125" />
-        <Point X="10.25" Y="11.125" />
+        <Point X="11.625" Y="11.396" />
+        <Point X="10.25" Y="11.396" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAA=</HashCode>
       <FileName>Model\Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -113,7 +113,7 @@
   <Class Name="Sokoban.Tile" Collapsed="true">
     <Position X="16" Y="9.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>QAAADAAAAAAAAAIAAABAAAAAAEIBBAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAADAAIEAAAAAJAQABAAAAAAEIBBAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -138,7 +138,7 @@
   <Class Name="Sokoban.OutputView">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>View\OutputView.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -226,5 +226,19 @@
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Enum Name="Sokoban.Direction">
+    <Position X="16.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
+      <FileName>Model\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sokoban.Kind">
+    <Position X="16" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAIAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Model\Kind.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

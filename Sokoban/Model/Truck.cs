@@ -7,14 +7,14 @@ namespace Sokoban
 {
     public class Truck : ObjectOnTile
     {
-
+        private Tile currentTile;
 
         public Truck(Tile StandsOnTile)
         {
-            this.StandsOnTile = StandsOnTile;
+            this.currentTile = StandsOnTile;
         }
 
-
+        
         public override void MoveObject(int direction)
         {
 
