@@ -52,15 +52,17 @@ namespace Sokoban
                             this._input.Close();
                         }
                     }
-                } while (s != null){
-                    this._maze.Width = num1;
-                    this._maze.Heigth = num2;
+                    while (s != null)
+                    {
+                        this._maze.Width = num1;
+                        this._maze.Heigth = num2;
+                    }
                 }
-            }
             catch
             {
                 throw;
             }
+
         }
 
 
