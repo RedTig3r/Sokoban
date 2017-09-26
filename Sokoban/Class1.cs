@@ -5,11 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public enum Direction
+    public class Class1
     {
-        right,
-        left,
-        up,
-        down,
     }
 }

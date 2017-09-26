@@ -7,14 +7,13 @@ namespace Sokoban
 {
     public class Maze
     {
-        private Tile _firstTile;
-        private Truck _Truck;
-        private List <Crate> _CrateList;
-        private int _mazeHeight;
-        private int _mazeWidth;
+        public Tile OriginalTile { get; set; }
+        private Truck Truck { get; set; }
+        public List <Crate> CrateList { get; set; }
+        public int MazeHeight { get; set; }
+        public int MazeWidth { get; set; }
 
-                
-        public void MoveTruck(Direction direction)
+        public void MoveTruck(int direction)
         {
             try
             {
@@ -26,17 +25,12 @@ namespace Sokoban
             }
         }
 
-        public Tile OriginTile { get; set; }
-        public Truck Truck { get; set; }
-        public int Width { get; set; }
-        public int Heigth { get; set; }
-        
         public bool gameIsFinished()
         {
 
-            int amountOfCrates = this._CrateList.Count;
+            int amountOfCrates = this.CrateList.Count;
             int x = 0;
-            foreach (Crate crate in this._CrateList)
+            foreach (Crate crate in this.CrateList)
             {
                 if (crate.getStandsOnTileDirection() == true)
                 {

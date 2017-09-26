@@ -9,6 +9,11 @@ namespace Sokoban
     public class Destination: Tile
     {
 
+         public Destination()
+        {
+            GameObjectsType = ObjectEnum.Destination;
+        }
+
 
         public override bool CanEnter()
         {
@@ -33,43 +38,6 @@ namespace Sokoban
         {
             this.ObjectOnTile = null;
         }
-
-        public override char getGameObjectCharacter()
-        {
-     
-                return 'X';
-      
-        }
-
-
-        public override Tile GetTileDirection(int direction)
-        {
-
-            Tile tile = null;
-
-            switch (direction)
-            {
-                case 1:
-                    tile = this.UpTile;
-                    break;
-                case 2:
-                    tile = this.DownTile;
-                    break;
-                case 3:
-                    tile = this.LeftTile;
-                    break;
-                case 4:
-                    tile = this.RightTile;
-                    break;
-                default:
-                    tile = null;
-                    break;
-            }
-
-            return tile;
-        }
-
-
 
 
     }

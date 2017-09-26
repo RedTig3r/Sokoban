@@ -6,15 +6,16 @@ using System.Text;
 namespace Sokoban
 {
     public class Truck : ObjectOnTile
-    {
-        private Tile currentTile;
+    { 
 
-        public Truck(Tile StandsOnTile)
+        public Truck(Tile standsOnTile)
         {
-            this.currentTile = StandsOnTile;
+            this.StandsOnTile = standsOnTile;
+            GameObjectsType = ObjectEnum.Truck;
+
         }
 
-        
+
         public override void MoveObject(int direction)
         {
 
@@ -34,33 +35,22 @@ namespace Sokoban
                     tile = StandsOnTile.RightTile;
                     break;
             }
-            if (tile != null)
+            if (tile != null )
             {
-                if (tile.hasCrate == true)
-                {
-                    tile.ObjectOnTile.MoveObject(direction);
-                    tile.GetTileDirection(direction).hasCrate = true;
-
-                }
-
-                 if (tile.CanEnter() == true)
+                if (tile.CanEnter())
                 {
                     tile.ChangeObjectOnTile(this);
                     StandsOnTile.DeleteObjectOnTile();
                     StandsOnTile = tile;
                     this.StandsOnTile.DeleteObjectOnTile();
                 }
-                
-               
-                
+                 
+                      
             }
 
         }
 
-        public override char getGameObjectCharacter()
-        {
-            return '@';
-        }
+
 
 
 

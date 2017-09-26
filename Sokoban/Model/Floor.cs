@@ -8,7 +8,12 @@ namespace Sokoban
     public class Floor : Tile
     {
 
-   
+
+        public Floor()
+        {
+            GameObjectsType = ObjectEnum.Floor;
+        }
+
 
         public override bool CanEnter()
         {
@@ -34,10 +39,6 @@ namespace Sokoban
             this.ObjectOnTile = null;
         }
 
-        public override char getGameObjectCharacter()
-        {
-            return '.';
-        }
         public override Tile GetTileDirection(int direction)
         {
 

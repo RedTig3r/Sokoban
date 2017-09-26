@@ -16,6 +16,8 @@ namespace Sokoban
         {
             StandsOnTile = standsOnTile;
 
+            GameObjectsType = ObjectEnum.Crate;
+
 
         }
 
@@ -38,44 +40,30 @@ namespace Sokoban
                     tile = StandsOnTile.RightTile;
                     break;
             }
-            if (tile != null && tile.CanEnter() == true)
+            if (tile != null && tile.CanEnter())
             {
-
                 tile.ChangeObjectOnTile(this);
                 StandsOnTile.DeleteObjectOnTile();
                 StandsOnTile = tile;
-              
-
             }
         }
 
         public bool getStandsOnTileDirection()
         {
-            if (this.gameObjectCharacter == '0')
+            if (this.GameObjectsType == ObjectEnum.CrateOnDestination)
             {
                 return true;
             }
             else
             {
-
                 return false;
             }
         }
 
-        public override char getGameObjectCharacter()
-        {
-            if (this.StandsOnTile.gameObjectCharacter == 'X')
-            {
-                return '0';
-            }
-            else
-            {
-                return 'O';
-            }
-        }
+
     }
 }
 
 
 
-   
+
