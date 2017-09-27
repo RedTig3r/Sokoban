@@ -54,47 +54,47 @@ namespace Sokoban
 
         public void ShowMaze(Maze maze)
         {
-            int height = maze.Heigth;
-            int width = maze.Width;
-            Tile tile = maze.OriginTile;
-            Tile tileUnder = tile.DownTile;
+            int height = maze.MazeHeight;
+            int width = maze.MazeWidth;
+            Tile tile = maze.OriginalTile;
+            //Tile tileUnder = tile.DownTile;
 
             for (int index1 = 0; index1 < height; index1++)
             {
                 for (int index2 = 0; index2 < width; index2++)
                 {
-                    switch (tile.kind)
+                    switch (tile.GameObjectsType)
                     {
-                        case Kind.floor:
-                            if (tile.hasCrate)
+                        case ObjectEnum.Floor:
+                            if (tile.truck != null)
                             {
                                 System.Console.Write("O");
                                 break;
                             }
-                            if (tile.hasTruck)
+                            if (tile.crate != null)
                             {
                                 System.Console.Write("@");
                                 break;
                             }
                             System.Console.Write(".");
                             break;
-                        case Kind.wall:
+                        case ObjectEnum.Wall:
                             System.Console.Write("█");
                             break;
-                        case Kind.target:
-                            if (tile.hasCrate)
+                        case ObjectEnum.Destination:
+                            if (tile.truck != null)
                             {
                                 System.Console.Write("0");
                                 break;
                             }
-                            if (tile.hasTruck)
+                            if (tile.crate != null)
                             {
                                 System.Console.Write("@");
                                 break;
                             }
                             System.Console.Write("x");
                             break;
-                        case Kind.space:
+                        case ObjectEnum.Space:
                             System.Console.Write(" ");
                             break;
                         default:
@@ -103,12 +103,12 @@ namespace Sokoban
                     }
                     tile = tile.RightTile;
                 }
-                tile = tileUnder;
+               /* tile = tileUnder;
                 if (tileUnder != null)
                 {
                     tileUnder = tile.DownTile;
                     System.Console.WriteLine();
-                }
+                }*/
             }
         }
 

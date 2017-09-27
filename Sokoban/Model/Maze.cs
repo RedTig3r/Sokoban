@@ -8,7 +8,7 @@ namespace Sokoban
     public class Maze
     {
         public Tile OriginalTile { get; set; }
-        private Truck Truck { get; set; }
+        public Truck Truck { get; set; }
         public List <Crate> CrateList { get; set; }
         public int MazeHeight { get; set; }
         public int MazeWidth { get; set; }

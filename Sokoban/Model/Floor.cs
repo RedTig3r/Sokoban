@@ -39,7 +39,7 @@ namespace Sokoban
             this.ObjectOnTile = null;
         }
 
-        public override Tile GetTileDirection(int direction)
+        public Tile GetTileDirection(int direction) //er stond override maar gaf fout dus even weggelaten om te testen
         {
 
             Tile tile = null;

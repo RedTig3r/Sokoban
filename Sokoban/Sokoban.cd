@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="Sokoban.FileReader">
-    <Position X="8.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier />
-  </Class>
   <Class Name="Sokoban.Controller.GameController">
     <Position X="4.75" Y="2.5" Width="2" />
     <AssociationLine Name="_inputView" Type="Sokoban.InputView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -48,8 +44,8 @@
       <FileName>Model\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Truck" />
       <Property Name="OriginalTile" />
+      <Property Name="Truck" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Truck">
@@ -87,8 +83,14 @@
   </Class>
   <Class Name="Sokoban.Tile" Collapsed="true">
     <Position X="16" Y="9.25" Width="2" />
+    <AssociationLine Name="ObjectOnTile" Type="Sokoban.ObjectOnTile" FixedToPoint="true">
+      <Path>
+        <Point X="16" Y="9.688" />
+        <Point X="13.75" Y="9.688" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QAAADAAAAAAAAAIAAABAAAIAAEIABAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAADAAAEAAAAAJAAABAAAIAAEIABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -186,11 +188,18 @@
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Sokoban.FileReader">
+    <Position X="8.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAIAAAQEAAAAgAIAAACAAIEAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\FileReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="Sokoban.ObjectEnum">
     <Position X="17.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAEEAABBgAAAAAAAAgAAQAAAQUAAAAAAAAAAA=</HashCode>
-      <FileName>ObjectEnum.cs</FileName>
+      <FileName>Model\ObjectEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

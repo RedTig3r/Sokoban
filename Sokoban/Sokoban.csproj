@@ -46,9 +46,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Controller\FileReader.cs" />
-    <Compile Include="ObjectEnum.cs" />
+    <Compile Include="Model\ObjectEnum.cs" />
     <Compile Include="Model\EmptySpot.cs" />
     <Compile Include="Model\Floor.cs" />
     <Compile Include="Model\TileObject.cs" />

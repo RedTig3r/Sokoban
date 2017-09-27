@@ -40,13 +40,12 @@ namespace Sokoban.Controller
 
                 if (_mazeNumber == -1)
                 {
-                    Environment.Exit(0);
+                    Environment.Exit(0);    //stopt programma
                 }
                 else if (_mazeNumber > 0 && _mazeNumber < 5)
                 {
-
-                    _maze = _fileReader.CreateMaze(_mazeNumber);
-                  
+                    _maze = _fileReader.CreateMaze(_mazeNumber);    //print met fileReader de gekozen doolhof uit
+                    
                     inputIsCorrect = true;
                 }
                 else
@@ -60,7 +59,8 @@ namespace Sokoban.Controller
             while (_gameIsFinish != true)
             {
                 inputIsCorrect = false;
-                _outputView.ShowGameProces(_maze);
+                this._maze = _fileReader.LoadMaze(_mazeNumber);
+                _outputView.ShowGameProces(this._maze);
 
 
                 while (inputIsCorrect != true)
