@@ -28,6 +28,8 @@ namespace Sokoban
 
         private void MakeApplication()
         {
+            /*
+
             this._input = new FileStream(this._fileName, FileMode.Open, FileAccess.Read);
             this._reader = new StreamReader((Stream)this._input);
             int num1 = 0;
@@ -62,6 +64,8 @@ namespace Sokoban
             {
                 throw;
             }
+
+            */
 
         }
 

@@ -5,20 +5,59 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Truck : ObjectOnTile
-    { 
+    public class Employee : ObjectOnTile
+    {
 
-        public Truck(Tile standsOnTile)
+        Random random = new Random();
+        bool isAwake;
+
+        public Employee()
         {
-            this.StandsOnTile = standsOnTile;
-            GameObjectsType = ObjectEnum.Truck;
+            GameObjectsType = ObjectEnum.EmployeeAwake;
+            isAwake = true;
+        }
+
+
+
+        public void UseEmployee()
+        {
+
+            if(isAwake == false)
+            {
+                if(random.Next(100) < 10)
+                {
+                    this.isAwake = true;
+                    GameObjectsType = ObjectEnum.EmployeeAwake;
+                }
+            }else
+            {
+                if (random.Next(100) < 25)
+                {
+                    this.isAwake = false;
+                    GameObjectsType = ObjectEnum.SleepingEmployee;
+           
+                }else
+                {
+                    this.moveEmployee(random.Next(1,5)); 
+                }
+            }
 
         }
 
 
         public override void MoveObject(int direction)
         {
+            if (isAwake == false)
+            {
+                isAwake = true;
+                GameObjectsType = ObjectEnum.EmployeeAwake;
+            }
+          
+        }
 
+
+        public void moveEmployee(int direction)
+        {
             Tile tile = null;
             switch (direction)
             {
@@ -35,7 +74,7 @@ namespace Sokoban
                     tile = StandsOnTile.RightTile;
                     break;
             }
-            if (tile != null )
+            if (tile != null)
             {
 
                 if (tile.ObjectOnTile != null)
@@ -52,14 +91,8 @@ namespace Sokoban
                     StandsOnTile = tile;
                     this.StandsOnTile.DeleteObjectOnTile();
                 }
-                      
+
             }
-
         }
-
-
-
-
-
     }
 }

@@ -54,6 +54,7 @@ namespace Sokoban
 
         public void ShowMaze(Maze maze)
         {
+            /*
             int height = maze.Heigth;
             int width = maze.Width;
             Tile tile = maze.OriginTile;
@@ -110,6 +111,7 @@ namespace Sokoban
                     System.Console.WriteLine();
                 }
             }
+                */
         }
 
 

@@ -5,13 +5,15 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Floor : Tile
+    public class Trap : Tile
     {
 
+        private int amountOfTimesUsed;
 
-        public Floor()
+        public Trap()
         {
-            GameObjectsType = ObjectEnum.Floor;
+            GameObjectsType = ObjectEnum.Trap;
+            amountOfTimesUsed = 0;
         }
 
 
@@ -32,14 +34,23 @@ namespace Sokoban
         public override void ChangeObjectOnTile(ObjectOnTile objectOnTile)
         {
             this.ObjectOnTile = objectOnTile;
+            amountOfTimesUsed++;
+
+            if (amountOfTimesUsed > 3)
+            {
+                GameObjectsType = ObjectEnum.Hole;
+            }
+
+            if (ObjectOnTile is Crate)
+            {
+                this.ObjectOnTile = null;
+            }
+
         }
 
         public override void DeleteObjectOnTile()
         {
             this.ObjectOnTile = null;
         }
-
-      
-
     }
 }
