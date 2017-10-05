@@ -64,20 +64,6 @@ namespace Sokoban
                 throw;
             }
         }
-
-        public bool getStandsOnTileDirection()
-        {
-            if (GameObjectsCharacter == 'x')
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
     }
 }
 

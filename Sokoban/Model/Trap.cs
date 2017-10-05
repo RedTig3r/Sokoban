@@ -41,7 +41,7 @@ namespace Sokoban
                 GameObjectsCharacter = ' ';
             }
 
-            if (ObjectOnTile is Crate)
+            if (GameObjectsCharacter == ' ' && ObjectOnTile is Crate)
             {
                 this.ObjectOnTile = null;
             }

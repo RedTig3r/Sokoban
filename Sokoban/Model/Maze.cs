@@ -15,6 +15,11 @@ namespace Sokoban
         public List <Crate> CrateList { get; set; }
 
 
+        public Maze()
+        {
+            CrateList = new List<Crate>();
+        }
+
         public void MoveTruck(int direction)
         {
             if (Truck != null)
@@ -52,7 +57,7 @@ namespace Sokoban
                 int x = 0;
                 foreach (Crate crate in this.CrateList)
                 {
-                    if (crate.getStandsOnTileDirection() == true)
+                    if (crate.GameObjectsCharacter == '0')
                     {
                         x++;
                     }

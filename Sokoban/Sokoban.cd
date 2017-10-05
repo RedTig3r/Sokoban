@@ -8,8 +8,8 @@
     <AssociationLine Name="_inputView" Type="Sokoban.InputView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="5.417" Y="2.5" />
-        <Point X="5.417" Y="1.5" />
-        <Point X="4.25" Y="1.5" />
+        <Point X="5.417" Y="1.59" />
+        <Point X="4.25" Y="1.59" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="_outputView" Type="Sokoban.OutputView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -37,7 +37,7 @@
     <Position X="4.75" Y="6.25" Width="2.75" />
     <AssociationLine Name="OriginalTile" Type="Sokoban.Tile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.562" Y="8.574" />
+        <Point X="5.562" Y="8.767" />
         <Point X="5.562" Y="12.795" />
         <Point X="17" Y="12.795" />
         <Point X="17" Y="9.812" />
@@ -221,7 +221,7 @@
   <Class Name="Sokoban.FileReader">
     <Position X="8.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAIAAAQAAAAAgAAAAACAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAIAAAQAAAAAgAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controller\FileReader.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

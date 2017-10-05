@@ -58,11 +58,13 @@ namespace Sokoban.Controller
 
             if (_maze != null)
             {
+            
+
                 while (_gameIsFinish != true)
                 {
                     inputIsCorrect = false;
                     _outputView.ShowGameProces(_maze);
-
+                    _gameIsFinish = _maze.gameIsFinished();
 
                     while (inputIsCorrect != true)
                     {
@@ -96,7 +98,10 @@ namespace Sokoban.Controller
 
                     _maze.MoveEmployee();
 
-                    _gameIsFinish = _maze.gameIsFinished();
+                
+                       
+            
+            
                 }
             }else
             {

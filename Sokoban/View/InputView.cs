@@ -76,10 +76,14 @@ namespace Sokoban
             System.Console.WriteLine("=== HOERA OPGELOST ===");
             System.Console.WriteLine("> press key to continue");
             System.Console.ReadKey();
+            System.Console.Clear();
         }
 
 
-  
+
+
+
+
 
 
     }
