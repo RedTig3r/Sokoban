@@ -19,7 +19,7 @@ namespace Sokoban
             System.Console.WriteLine("|    ' ' : outerspace           |   Duw met de truck       |");
             System.Console.WriteLine("|    '#' : muur                 |   de krat(ten)           |");
             System.Console.WriteLine("|    '.' : vloer                |   naar de bestemming     |");
-            System.Console.WriteLine("|    'O' : krat                 |                          |");
+            System.Console.WriteLine("|    'o' : krat                 |                          |");
             System.Console.WriteLine("|    '0' : krat op bestemming   |                          |");
             System.Console.WriteLine("|    'x' : bestemming           |                          |");
             System.Console.WriteLine("|    '@' : truck                |                          |");
@@ -77,6 +77,13 @@ namespace Sokoban
                     downTile = downTile.DownTile;
                     Console.WriteLine();
 
+                }
+
+                while (tile != null)
+                {
+
+                    Console.Write(tile.GetTileGameObjectsCharacter());
+                    tile = tile.RightTile;
                 }
 
                 Console.WriteLine();

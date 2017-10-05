@@ -8,13 +8,22 @@ namespace Sokoban
     public class Employee : ObjectOnTile
     {
 
+
         Random random = new Random();
         bool isAwake;
 
-        public Employee()
+        public Employee(Tile standsOnTile, bool isAwake)
         {
-            GameObjectsCharacter = '$';
-            isAwake = true;
+            this.StandsOnTile = standsOnTile;
+            this.isAwake = isAwake;
+
+            if (isAwake)
+            {
+                GameObjectsCharacter = '$';
+            }else
+            {
+                GameObjectsCharacter = 'Z';
+            }
         }
 
 
@@ -89,7 +98,7 @@ namespace Sokoban
                     tile.ChangeObjectOnTile(this);
                     StandsOnTile.DeleteObjectOnTile();
                     StandsOnTile = tile;
-                    this.StandsOnTile.DeleteObjectOnTile();
+                 
                 }
 
             }

@@ -23,39 +23,45 @@ namespace Sokoban
 
         public override void MoveObject(int direction)
         {
-
-            Tile tile = null;
-            switch (direction)
+            try
             {
-                case 1:
-                    tile = StandsOnTile.UpTile;
-                    break;
-                case 2:
-                    tile = StandsOnTile.DownTile;
-                    break;
-                case 3:
-                    tile = StandsOnTile.LeftTile;
-                    break;
-                case 4:
-                    tile = StandsOnTile.RightTile;
-                    break;
+                Tile tile = null;
+                switch (direction)
+                {
+                    case 1:
+                        tile = StandsOnTile.UpTile;
+                        break;
+                    case 2:
+                        tile = StandsOnTile.DownTile;
+                        break;
+                    case 3:
+                        tile = StandsOnTile.LeftTile;
+                        break;
+                    case 4:
+                        tile = StandsOnTile.RightTile;
+                        break;
+                }
+                if (tile != null && tile.CanEnter())
+                {
+
+                    if (tile is Destination)
+                    {
+                        GameObjectsCharacter = '0';
+                    }
+                    else
+                    {
+                        GameObjectsCharacter = 'o';
+                    }
+
+
+                    tile.ChangeObjectOnTile(this);
+                    StandsOnTile.DeleteObjectOnTile();
+                    StandsOnTile = tile;
+                }
             }
-            if (tile != null && tile.CanEnter())
+            catch
             {
-
-                if (tile is Destination)
-                {
-                    GameObjectsCharacter = 'x';
-                }
-                else
-                {
-                    GameObjectsCharacter = '0';
-                }
-
-
-                tile.ChangeObjectOnTile(this);
-                StandsOnTile.DeleteObjectOnTile();
-                StandsOnTile = tile;
+                throw;
             }
         }
 

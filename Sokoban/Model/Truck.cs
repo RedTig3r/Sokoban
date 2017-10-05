@@ -18,42 +18,49 @@ namespace Sokoban
 
         public override void MoveObject(int direction)
         {
-
-            Tile tile = null;
-            switch (direction)
-            {
-                case 1:
-                    tile = StandsOnTile.UpTile;
-                    break;
-                case 2:
-                    tile = StandsOnTile.DownTile;
-                    break;
-                case 3:
-                    tile = StandsOnTile.LeftTile;
-                    break;
-                case 4:
-                    tile = StandsOnTile.RightTile;
-                    break;
-            }
-            if (tile != null )
-            {
-
-                if (tile.ObjectOnTile != null)
+            try{
+                Tile tile = null;
+                switch (direction)
                 {
-                    tile.ObjectOnTile.MoveObject(direction);
+                    case 1:
+                        tile = StandsOnTile.UpTile;
+                        break;
+                    case 2:
+                        tile = StandsOnTile.DownTile;
+                        break;
+                    case 3:
+                        tile = StandsOnTile.LeftTile;
+                        break;
+                    case 4:
+                        tile = StandsOnTile.RightTile;
+                        break;
                 }
-
-
-
-                if (tile.CanEnter())
+                if (tile != null)
                 {
-                    tile.ChangeObjectOnTile(this);
-                    StandsOnTile.DeleteObjectOnTile();
-                    StandsOnTile = tile;
-                    this.StandsOnTile.DeleteObjectOnTile();
+
+                    if (tile.ObjectOnTile != null)
+                    {
+                        tile.ObjectOnTile.MoveObject(direction);
+                    }
+
+
+
+                    if (tile.CanEnter())
+                    {
+                        tile.ChangeObjectOnTile(this);
+                        StandsOnTile.DeleteObjectOnTile();
+                        StandsOnTile = tile;
+                       
+                    }
+
                 }
-                      
             }
+            catch
+            {
+                throw;
+            }
+
+          
 
         }
 

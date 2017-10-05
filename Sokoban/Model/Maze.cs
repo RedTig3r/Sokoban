@@ -14,9 +14,6 @@ namespace Sokoban
 
         public List <Crate> CrateList { get; set; }
 
-        public int MazeWidth { get; set; }
-        public int Mazeheight { get; set; }
-
 
         public void MoveTruck(int direction)
         {

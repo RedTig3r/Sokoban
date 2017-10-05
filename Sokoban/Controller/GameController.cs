@@ -42,12 +42,8 @@ namespace Sokoban.Controller
                 {
                     Environment.Exit(0);
                 }
-                else if (mazeNumber > 0 && mazeNumber < 5)
+                else if (mazeNumber > 0 && mazeNumber < 7)
                 {
-
-                    // _maze = _fileReader.CreateMaze(_mazeNumber);
-
-                    //test maze;
                     _maze = _fileReader.CreateMaze(mazeNumber);
 
                     inputIsCorrect = true;
@@ -82,7 +78,7 @@ namespace Sokoban.Controller
 
                             if (askInput == -2)
                             {
-                                _maze = _fileReader.ResetMaze(mazeNumber);
+                                _maze = _fileReader.CreateMaze(mazeNumber);
                             }
                             else if (askInput == -1)
                             {
