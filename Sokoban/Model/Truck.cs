@@ -11,7 +11,7 @@ namespace Sokoban
         public Truck(Tile standsOnTile)
         {
             this.StandsOnTile = standsOnTile;
-            GameObjectsType = ObjectEnum.Truck;
+            GameObjectsCharacter = '@';
 
         }
 

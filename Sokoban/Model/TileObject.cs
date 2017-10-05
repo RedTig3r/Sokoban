@@ -10,7 +10,7 @@ namespace Sokoban
 
         public Tile StandsOnTile;
 
-        public ObjectEnum GameObjectsType { get; set; }
+        public char GameObjectsCharacter { get; set; }
 
 
         public abstract void MoveObject(int direction);

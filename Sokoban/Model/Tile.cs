@@ -10,7 +10,7 @@ namespace Sokoban
 
         public ObjectOnTile ObjectOnTile { get; set; }
 
-        public ObjectEnum GameObjectsType { get; set; }
+        public char GameObjectsCharacter;
 
         public Tile RightTile { get; set; }
         public Tile LeftTile { get; set; }
@@ -23,31 +23,18 @@ namespace Sokoban
 
         public abstract void ChangeObjectOnTile(ObjectOnTile objectOnTile);
 
-        public Tile GetTileDirection(int direction)
+
+
+       public char GetTileGameObjectsCharacter()
         {
-
-            Tile tile = null;
-
-            switch (direction)
+            if (ObjectOnTile == null)
             {
-                case 1:
-                    tile = this.UpTile;
-                    break;
-                case 2:
-                    tile = this.DownTile;
-                    break;
-                case 3:
-                    tile = this.LeftTile;
-                    break;
-                case 4:
-                    tile = this.RightTile;
-                    break;
-                default:
-                    tile = null;
-                    break;
+                return ObjectOnTile.GameObjectsCharacter;
             }
-
-            return tile;
+            else
+            {
+                return this.GameObjectsCharacter;
+            }
         }
 
     }

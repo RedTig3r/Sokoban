@@ -12,7 +12,7 @@ namespace Sokoban
 
         public Trap()
         {
-            GameObjectsType = ObjectEnum.Trap;
+            GameObjectsCharacter = '~';
             amountOfTimesUsed = 0;
         }
 
@@ -38,7 +38,7 @@ namespace Sokoban
 
             if (amountOfTimesUsed > 3)
             {
-                GameObjectsType = ObjectEnum.Hole;
+                GameObjectsCharacter = ' ';
             }
 
             if (ObjectOnTile is Crate)

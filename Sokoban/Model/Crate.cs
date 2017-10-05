@@ -16,7 +16,7 @@ namespace Sokoban
         {
             StandsOnTile = standsOnTile;
 
-            GameObjectsType = ObjectEnum.Crate;
+            GameObjectsCharacter = 'o';
 
 
         }
@@ -42,6 +42,17 @@ namespace Sokoban
             }
             if (tile != null && tile.CanEnter())
             {
+
+                if (tile is Destination)
+                {
+                    GameObjectsCharacter = 'x';
+                }
+                else
+                {
+                    GameObjectsCharacter = '0';
+                }
+
+
                 tile.ChangeObjectOnTile(this);
                 StandsOnTile.DeleteObjectOnTile();
                 StandsOnTile = tile;
@@ -50,7 +61,7 @@ namespace Sokoban
 
         public bool getStandsOnTileDirection()
         {
-            if (this.GameObjectsType == ObjectEnum.CrateOnDestination)
+            if (GameObjectsCharacter == 'x')
             {
                 return true;
             }

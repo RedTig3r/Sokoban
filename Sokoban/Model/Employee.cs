@@ -13,7 +13,7 @@ namespace Sokoban
 
         public Employee()
         {
-            GameObjectsType = ObjectEnum.EmployeeAwake;
+            GameObjectsCharacter = '$';
             isAwake = true;
         }
 
@@ -27,14 +27,14 @@ namespace Sokoban
                 if(random.Next(100) < 10)
                 {
                     this.isAwake = true;
-                    GameObjectsType = ObjectEnum.EmployeeAwake;
+                    GameObjectsCharacter = '$';
                 }
             }else
             {
                 if (random.Next(100) < 25)
                 {
                     this.isAwake = false;
-                    GameObjectsType = ObjectEnum.SleepingEmployee;
+                    GameObjectsCharacter = 'Z';
            
                 }else
                 {
@@ -50,7 +50,7 @@ namespace Sokoban
             if (isAwake == false)
             {
                 isAwake = true;
-                GameObjectsType = ObjectEnum.EmployeeAwake;
+                GameObjectsCharacter = '$';
             }
           
         }

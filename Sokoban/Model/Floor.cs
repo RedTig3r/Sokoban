@@ -11,7 +11,7 @@ namespace Sokoban
 
         public Floor()
         {
-            GameObjectsType = ObjectEnum.Floor;
+            GameObjectsCharacter = '.';
         }
 
 

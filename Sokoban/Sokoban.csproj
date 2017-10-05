@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Controller\FileReader.cs" />
     <Compile Include="Model\Employee.cs" />
-    <Compile Include="ObjectEnum.cs" />
     <Compile Include="Model\EmptySpot.cs" />
     <Compile Include="Model\Floor.cs" />
     <Compile Include="Model\TileObject.cs" />

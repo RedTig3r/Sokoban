@@ -11,7 +11,7 @@ namespace Sokoban
 
         public Wall()
         {
-            GameObjectsType = ObjectEnum.Wall;
+            GameObjectsCharacter = '#';
         }
 
 

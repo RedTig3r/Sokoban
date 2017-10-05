@@ -38,11 +38,11 @@ namespace Sokoban
             System.Console.WriteLine("| Sokoban |");
             System.Console.WriteLine("|_________|");
             System.Console.WriteLine("________________________________________________________");
-            this.ShowMaze(maze);            
+            this.ShowMaze(maze);
             System.Console.WriteLine("________________________________________________________|");
-    
+
         }
-        
+
         public void MazeAccomplished()
         {
             System.Console.WriteLine();
@@ -54,67 +54,37 @@ namespace Sokoban
 
         public void ShowMaze(Maze maze)
         {
-            /*
-            int height = maze.Heigth;
-            int width = maze.Width;
-            Tile tile = maze.OriginTile;
-            Tile tileUnder = tile.DownTile;
 
-            for (int index1 = 0; index1 < height; index1++)
+            if (maze.OriginalTile != null)
             {
-                for (int index2 = 0; index2 < width; index2++)
+                Tile tile = maze.OriginalTile;
+                Tile downTile = tile.DownTile;
+
+                while (downTile != null)
                 {
-                    switch (tile.kind)
+                    while (tile != null)
                     {
-                        case Kind.floor:
-                            if (tile.hasCrate)
-                            {
-                                System.Console.Write("O");
-                                break;
-                            }
-                            if (tile.hasTruck)
-                            {
-                                System.Console.Write("@");
-                                break;
-                            }
-                            System.Console.Write(".");
-                            break;
-                        case Kind.wall:
-                            System.Console.Write("█");
-                            break;
-                        case Kind.target:
-                            if (tile.hasCrate)
-                            {
-                                System.Console.Write("0");
-                                break;
-                            }
-                            if (tile.hasTruck)
-                            {
-                                System.Console.Write("@");
-                                break;
-                            }
-                            System.Console.Write("x");
-                            break;
-                        case Kind.space:
-                            System.Console.Write(" ");
-                            break;
-                        default:
-                            System.Console.Write("?");
-                            break;
+
+                        Console.Write(tile.GetTileGameObjectsCharacter());
+                        tile = tile.RightTile;
                     }
-                    tile = tile.RightTile;
+
+                    tile = downTile;
+                    downTile = downTile.DownTile;
+                    Console.WriteLine();
+
                 }
-                tile = tileUnder;
-                if (tileUnder != null)
-                {
-                    tileUnder = tile.DownTile;
-                    System.Console.WriteLine();
-                }
+
+                Console.WriteLine();
             }
-                */
+
+            
+
         }
 
-
     }
+
+
+
 }
 

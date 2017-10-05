@@ -84,7 +84,7 @@
   <Class Name="Sokoban.Tile" Collapsed="true">
     <Position X="16" Y="9.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>QAAADAAAAAAAAAIAAABAAAIAAEIBBAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAADAACAAAAAAIAAABAAAAAAEIABAAAAABAAAAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -145,7 +145,7 @@
   <Class Name="Sokoban.ObjectOnTile" Collapsed="true">
     <Position X="12.25" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAIAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAAgA=</HashCode>
       <FileName>Model\TileObject.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -221,12 +221,5 @@
       <FileName>Controller\FileReader.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Sokoban.ObjectEnum">
-    <Position X="17.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAACAAEEAABBgAAAAAAAAgAAQAAAQUAAAAAAAAAAA=</HashCode>
-      <FileName>ObjectEnum.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

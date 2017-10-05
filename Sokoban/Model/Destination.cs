@@ -11,7 +11,7 @@ namespace Sokoban
 
          public Destination()
         {
-            GameObjectsType = ObjectEnum.Destination;
+            GameObjectsCharacter = '0';
         }
 
 
