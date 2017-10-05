@@ -27,7 +27,7 @@ namespace Sokoban
 
        public char GetTileGameObjectsCharacter()
         {
-            if (ObjectOnTile == null)
+            if (ObjectOnTile != null)
             {
                 return ObjectOnTile.GameObjectsCharacter;
             }

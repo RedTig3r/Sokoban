@@ -65,7 +65,7 @@ namespace Sokoban
         }
 
 
-        public void ShowWrongInput()
+        public void ShowErrorInput()
         {
             System.Console.WriteLine("> ?");
         }
@@ -77,6 +77,9 @@ namespace Sokoban
             System.Console.WriteLine("> press key to continue");
             System.Console.ReadKey();
         }
+
+
+  
 
 
     }
