@@ -26,96 +26,104 @@ namespace Sokoban.Controller
 
         private void StartGame()
         {
-
-            _outputView.ShowGameInfo();
-           
-            int askInput;
-            bool inputIsCorrect = false;
-            this._gameIsFinish = false;
-            int mazeNumber = 0;
-
-            while (inputIsCorrect != true)
+            try
             {
-                mazeNumber = _inputView.AskToSelectMazeInput();
+                _outputView.ShowGameInfo();
 
-                if (mazeNumber == -1)
+                bool inputIsCorrect = false;
+                this._gameIsFinish = false;
+                int mazeNumber = 0;
+                int askInputNumber;
+
+                while (inputIsCorrect != true)
                 {
-                    Environment.Exit(0);
+                    mazeNumber = _inputView.AskToSelectMazeInput();
+
+                    if (mazeNumber == -1)
+                    {
+                        Environment.Exit(0);
+                    }
+                    else if (mazeNumber > 0 && mazeNumber < 7)
+                    {
+                        _maze = _fileReader.CreateMaze(mazeNumber);
+
+                        inputIsCorrect = true;
+                    }
+                    else
+                    {
+                        _inputView.ShowErrorInput();
+                        inputIsCorrect = false;
+                    }
+
                 }
-                else if (mazeNumber > 0 && mazeNumber < 7)
-                {
-                    _maze = _fileReader.CreateMaze(mazeNumber);
 
-                    inputIsCorrect = true;
+                if (_maze != null)
+                {
+
+
+                    while (_gameIsFinish != true)
+                    {
+
+                        _gameIsFinish = _maze.gameIsFinished();
+
+                        inputIsCorrect = _gameIsFinish;
+
+                        _outputView.ShowGameProces(_maze);
+
+
+                        while (inputIsCorrect != true)
+                        {
+                            askInputNumber = _inputView.AskGameControlInput();
+
+                            if (askInputNumber == 0)
+                            {
+                                _inputView.ShowErrorInput();
+                                inputIsCorrect = false;
+                            }
+                            else
+                            {
+
+                                if (askInputNumber == -2)
+                                {
+                                    _maze = _fileReader.CreateMaze(mazeNumber);
+                                }
+                                else if (askInputNumber == -1)
+                                {
+                                    Environment.Exit(0);
+                                }
+                                else
+                                {
+                                    _maze.MoveTruck(askInputNumber);
+                                }
+
+                                inputIsCorrect = true;
+                            }
+
+                        }
+
+                        _maze.MoveEmployee();
+
+                    }
                 }
                 else
                 {
                     _inputView.ShowErrorInput();
-                    inputIsCorrect = false;
                 }
 
+
+
+                _inputView.AskToPressKeyToStartOver();
+                this.StartGame();
+
+            }
+            catch
+            {
+                throw;
             }
 
-            if (_maze != null)
-            {
-            
-
-                while (_gameIsFinish != true)
-                {
-                    inputIsCorrect = false;
-                    _outputView.ShowGameProces(_maze);
-                    _gameIsFinish = _maze.gameIsFinished();
-
-                    while (inputIsCorrect != true)
-                    {
-                        askInput = _inputView.AskGameControlInput();
-
-                        if (askInput == 0)
-                        {
-                            _inputView.ShowErrorInput();
-                            inputIsCorrect = false;
-                        }
-                        else
-                        {
-
-                            if (askInput == -2)
-                            {
-                                _maze = _fileReader.CreateMaze(mazeNumber);
-                            }
-                            else if (askInput == -1)
-                            {
-                                Environment.Exit(0);
-                            }
-                            else
-                            {
-                                _maze.MoveTruck(askInput);
-                            }
-
-                            inputIsCorrect = true;
-                        }
-
-                    }
-
-                    _maze.MoveEmployee();
-
-                
-                       
-            
-            
-                }
-            }else
-            {
-                _inputView.ShowErrorInput();
-            }
-
-           
-
-            _inputView.AskToPressKeyToStartOver();
-            this.StartGame();
 
         }
 
-       
 
 
 

@@ -14,191 +14,135 @@ namespace Sokoban
         private string _fileName;
 
 
-
-
-
-
-
-
-        // stap 1
-        // file reader path!
-        // path readen 
-
-        //stap 2 
-        // OriginalTile aan maken !
-
-        // stap 3
-        // orignalTile lijn aan maken!
-
-
-        // ------- loop -------
-
-        // stap 4
-        // volgende lijn maken
-
-        // stap 5
-        // lijnen kopelen
-        // l1 [*] = [*] = [*] = [*] = [*] = [*]
-
-
-        //  []
-        //[][*][]
-        //  []
-
-
-        //l2 [*] = [.] = [X] = [@] = [.] = [*]
-
-
-        // C [*] = [*] = [*] = [*] = [*] = [*]
-        //   ||     ||   ||     ||   ||    ||    
-        // N [*] = [.] = [X] = [@] = [.] = [*]
-
-
-        // volgende lijn maken tot path read null!
-
-        // ------- loop -------
-
-        // stap 6 V
-        // return maze!
-
-
-
-
-        public Maze ResetMaze(int mazeNumber)
-        {
-            if (_maze != null)
-            {
-                return _maze;
-            }
-            else
-            {
-                return this.CreateMaze(mazeNumber);
-            }
-
-        }
-
         public Maze CreateMaze(int mazeNumber)
         {
-            this._maze = new Maze();
-            this._fileName = "..\\..\\Doolhofs\\doolhof" + mazeNumber + ".txt";
 
-            _reader = new StreamReader(_fileName);
-
-            List<Tile> currentTileList = new List<Tile>();
-            List<Tile> previousTileList = null;
-
-
-
-
-            this._input = new FileStream(this._fileName, FileMode.Open, FileAccess.Read);
-            this._reader = new StreamReader(this._input);
-            string lineString = this._reader.ReadLine();
-
-            while (lineString != null)
+            try
             {
+                this._maze = new Maze();
+                this._fileName = "..\\..\\Doolhofs\\doolhof" + mazeNumber + ".txt";
 
-                currentTileList = new List<Tile>();
+                _reader = new StreamReader(_fileName);
 
-                Tile currentTile = null;
-                Tile previousTile = null;
+                List<Tile> currentTileList = new List<Tile>();
+                List<Tile> previousTileList = null;
 
-                for (int x = 0; x < lineString.Length; x++)
+
+                this._input = new FileStream(this._fileName, FileMode.Open, FileAccess.Read);
+                this._reader = new StreamReader(this._input);
+                string lineString = this._reader.ReadLine();
+
+                while (lineString != null)
                 {
 
-                    currentTile = null;
+                    currentTileList = new List<Tile>();
 
-                    switch (lineString[x])
-                    {
-                        case 'x':
-                            currentTile = new Destination();
-                            break;
-                        case '~':
-                            currentTile = new Trap();
-                            break;
-                        case 'Z':
-                            currentTile = new Floor();
+                    Tile currentTile = null;
+                    Tile previousTile = null;
 
-                            Employee employeeASleep = new Employee(currentTile, false);
-
-                            currentTile.ObjectOnTile = employeeASleep;
-                            _maze.Employee = employeeASleep;
-                            break;
-                        case 'o':
-                            currentTile = new Floor();
-                            Crate crateNormal = new Crate(currentTile);
-                            _maze.AddCrate(crateNormal);
-                            currentTile.ObjectOnTile = crateNormal;
-
-                            break;
-                        case '0':
-                            currentTile = new Destination();
-                            Crate crateOnDestination = new Crate(currentTile);
-                            _maze.AddCrate(crateOnDestination);
-                            currentTile.ObjectOnTile = crateOnDestination;
-                            break;
-                        case '$':
-                            currentTile = new Floor();
-
-                            Employee employeeAwake = new Employee(currentTile, true);
-
-                            currentTile.ObjectOnTile = employeeAwake;
-                            _maze.Employee = employeeAwake;
-                            break;
-                        case '.':
-                            currentTile = new Floor();
-                            break;
-                        case '@':
-                            currentTile = new Floor();
-
-                            Truck truck = new Truck(currentTile);
-
-                            currentTile.ObjectOnTile = truck;
-                            _maze.Truck = truck;
-                            break;
-                        case ' ':
-                            currentTile = new EmptySpot();
-                            break;
-                        case '#':
-                            currentTile = new Wall();
-                            break;
-                        default:
-                            break;
-                    }
-                    if (previousTile != null)
-                    {
-                        currentTile.LeftTile = previousTile;
-                        previousTile.RightTile = currentTile;
-                    }
-                    previousTile = currentTile;
-                    currentTileList.Add(currentTile);
-                }
-
-                if (previousTileList != null)
-                {
-                    for (int i = 0; i < currentTileList.Count; i++)
+                    for (int x = 0; x < lineString.Length; x++)
                     {
 
-                        currentTileList[i].UpTile = previousTileList[i];
-                        previousTileList[i].DownTile = currentTileList[i];
+                        currentTile = null;
+
+                        switch (lineString[x])
+                        {
+                            case 'x':
+                                currentTile = new Destination();
+                                break;
+                            case '~':
+                                currentTile = new Trap();
+                                break;
+                            case 'Z':
+                                currentTile = new Floor();
+
+                                Employee employeeASleep = new Employee(currentTile, false);
+
+                                currentTile.ObjectOnTile = employeeASleep;
+                                _maze.Employee = employeeASleep;
+                                break;
+                            case 'o':
+                                currentTile = new Floor();
+                                Crate crateNormal = new Crate(currentTile);
+                                _maze.AddCrate(crateNormal);
+                                currentTile.ObjectOnTile = crateNormal;
+
+                                break;
+                            case '0':
+                                currentTile = new Destination();
+                                Crate crateOnDestination = new Crate(currentTile);
+                                _maze.AddCrate(crateOnDestination);
+                                currentTile.ObjectOnTile = crateOnDestination;
+                                break;
+                            case '$':
+                                currentTile = new Floor();
+
+                                Employee employeeAwake = new Employee(currentTile, true);
+
+                                currentTile.ObjectOnTile = employeeAwake;
+                                _maze.Employee = employeeAwake;
+                                break;
+                            case '.':
+                                currentTile = new Floor();
+                                break;
+                            case '@':
+                                currentTile = new Floor();
+
+                                Truck truck = new Truck(currentTile);
+
+                                currentTile.ObjectOnTile = truck;
+                                _maze.Truck = truck;
+                                break;
+                            case ' ':
+                                currentTile = new EmptySpot();
+                                break;
+                            case '#':
+                                currentTile = new Wall();
+                                break;
+                            default:
+                                break;
+                        }
+                        if (previousTile != null)
+                        {
+                            currentTile.LeftTile = previousTile;
+                            previousTile.RightTile = currentTile;
+                        }
+                        previousTile = currentTile;
+                        currentTileList.Add(currentTile);
                     }
+
+                    if (previousTileList != null)
+                    {
+                        for (int i = 0; i < currentTileList.Count; i++)
+                        {
+
+                            currentTileList[i].UpTile = previousTileList[i];
+                            previousTileList[i].DownTile = currentTileList[i];
+                        }
+                    }
+                    else
+                    {
+                        this._maze.OriginalTile = currentTileList[0];
+                    }
+
+
+                    previousTileList = currentTileList;
+
+
+                    lineString = this._reader.ReadLine();
                 }
-                else
-                {
-                    this._maze.OriginalTile = currentTileList[0];
-                }
+
+                this._reader.Close();
+                this._input.Close();
 
 
-                previousTileList = currentTileList;
-
-
-                lineString = this._reader.ReadLine();
+                return _maze;
             }
-
-            this._reader.Close();
-            this._input.Close();
-
-
-            return _maze;
+            catch
+            {
+                throw;
+            }
         }
+
     }
 }

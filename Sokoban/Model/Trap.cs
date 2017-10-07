@@ -36,15 +36,17 @@ namespace Sokoban
             this.ObjectOnTile = objectOnTile;
             amountOfTimesUsed++;
 
+            if (GameObjectsCharacter == ' ' && ObjectOnTile is Crate)
+            {
+                this.DeleteObjectOnTile();
+            }
+
             if (amountOfTimesUsed > 3)
             {
                 GameObjectsCharacter = ' ';
             }
 
-            if (GameObjectsCharacter == ' ' && ObjectOnTile is Crate)
-            {
-                this.ObjectOnTile = null;
-            }
+         
 
         }
 

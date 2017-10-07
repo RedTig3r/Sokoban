@@ -62,7 +62,7 @@ namespace Sokoban
             if (maze.OriginalTile != null)
             {
                 Tile tile = maze.OriginalTile;
-                Tile downTile = tile.DownTile;
+                Tile downTile = tile;
 
                 while (downTile != null)
                 {
@@ -73,18 +73,14 @@ namespace Sokoban
                         tile = tile.RightTile;
                     }
 
-                    tile = downTile;
+            
                     downTile = downTile.DownTile;
+                    tile = downTile;
                     Console.WriteLine();
 
                 }
 
-                while (tile != null)
-                {
-
-                    Console.Write(tile.GetTileGameObjectsCharacter());
-                    tile = tile.RightTile;
-                }
+    
 
                 Console.WriteLine();
             }
