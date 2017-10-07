@@ -15,7 +15,7 @@ namespace Sokoban
 
         public ObjectOnTile ObjectOnTile { get; set; }
 
-        public ObjectEnum GameObjectsType { get; set; }
+        public char GameObjectsCharacter;
 
         public Tile RightTile { get; set; }
         public Tile LeftTile { get; set; }
@@ -31,6 +31,20 @@ namespace Sokoban
         public abstract void DeleteObjectOnTile();
 
         public abstract void ChangeObjectOnTile(ObjectOnTile objectOnTile);
+
+
+
+       public char GetTileGameObjectsCharacter()
+        {
+            if (ObjectOnTile != null)
+            {
+                return ObjectOnTile.GameObjectsCharacter;
+            }
+            else
+            {
+                return this.GameObjectsCharacter;
+            }
+        }
 
     }
 

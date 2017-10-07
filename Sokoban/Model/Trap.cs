@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    public class Destination: Tile
+    public class Trap : Tile
     {
 
-         public Destination()
+        private int amountOfTimesUsed;
+
+        public Trap()
         {
-            GameObjectsCharacter = 'x';
+            GameObjectsCharacter = '~';
+            amountOfTimesUsed = 0;
         }
 
 
@@ -32,13 +34,25 @@ namespace Sokoban
         public override void ChangeObjectOnTile(ObjectOnTile objectOnTile)
         {
             this.ObjectOnTile = objectOnTile;
+            amountOfTimesUsed++;
+
+            if (GameObjectsCharacter == ' ' && ObjectOnTile is Crate)
+            {
+                this.DeleteObjectOnTile();
+            }
+
+            if (amountOfTimesUsed > 3)
+            {
+                GameObjectsCharacter = ' ';
+            }
+
+         
+
         }
 
         public override void DeleteObjectOnTile()
         {
             this.ObjectOnTile = null;
         }
-
-
     }
 }

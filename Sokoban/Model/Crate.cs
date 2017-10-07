@@ -16,51 +16,54 @@ namespace Sokoban
         {
             StandsOnTile = standsOnTile;
 
-            GameObjectsType = ObjectEnum.Crate;
+            GameObjectsCharacter = 'o';
 
 
         }
 
         public override void MoveObject(int direction)
         {
+            try
+            {
+                Tile tile = null;
+                switch (direction)
+                {
+                    case 1:
+                        tile = StandsOnTile.UpTile;
+                        break;
+                    case 2:
+                        tile = StandsOnTile.DownTile;
+                        break;
+                    case 3:
+                        tile = StandsOnTile.LeftTile;
+                        break;
+                    case 4:
+                        tile = StandsOnTile.RightTile;
+                        break;
+                }
+                if (tile != null && tile.CanEnter())
+                {
 
-            Tile tile = null;
-            switch (direction)
-            {
-                case 1:
-                    tile = StandsOnTile.UpTile;
-                    break;
-                case 2:
-                    tile = StandsOnTile.DownTile;
-                    break;
-                case 3:
-                    tile = StandsOnTile.LeftTile;
-                    break;
-                case 4:
-                    tile = StandsOnTile.RightTile;
-                    break;
+                    if (tile is Destination)
+                    {
+                        GameObjectsCharacter = '0';
+                    }
+                    else
+                    {
+                        GameObjectsCharacter = 'o';
+                    }
+
+
+                    tile.ChangeObjectOnTile(this);
+                    StandsOnTile.DeleteObjectOnTile();
+                    StandsOnTile = tile;
+                }
             }
-            if (tile != null && tile.CanEnter())
+            catch
             {
-                tile.ChangeObjectOnTile(this);
-                StandsOnTile.DeleteObjectOnTile();
-                StandsOnTile = tile;
+                throw;
             }
         }
-
-        public bool getStandsOnTileDirection()
-        {
-            if (this.GameObjectsType == ObjectEnum.CrateOnDestination)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
     }
 }
 

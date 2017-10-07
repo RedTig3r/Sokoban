@@ -11,7 +11,7 @@ namespace Sokoban
 
         public Floor()
         {
-            GameObjectsType = ObjectEnum.Floor;
+            GameObjectsCharacter = '.';
         }
 
 
@@ -39,32 +39,7 @@ namespace Sokoban
             this.ObjectOnTile = null;
         }
 
-        public Tile GetTileDirection(int direction) //er stond override maar gaf fout dus even weggelaten om te testen
-        {
-
-            Tile tile = null;
-
-            switch (direction)
-            {
-                case 1:
-                    tile = this.UpTile;
-                    break;
-                case 2:
-                    tile = this.DownTile;
-                    break;
-                case 3:
-                    tile = this.LeftTile;
-                    break;
-                case 4:
-                    tile = this.RightTile;
-                    break;
-                default:
-                    tile = null;
-                    break;
-            }
-
-            return tile;
-        }
+      
 
     }
 }

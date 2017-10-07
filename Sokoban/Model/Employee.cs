@@ -5,20 +5,73 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Truck : ObjectOnTile
-    { 
+    public class Employee : ObjectOnTile
+    {
 
-        public Truck(Tile standsOnTile)
+
+        Random random = new Random();
+        bool isAwake;
+
+        public Employee(Tile standsOnTile, bool isAwake)
         {
             this.StandsOnTile = standsOnTile;
-            GameObjectsCharacter = '@';
+            this.isAwake = isAwake;
+
+            if (isAwake)
+            {
+                GameObjectsCharacter = '$';
+            }
+            else
+            {
+                GameObjectsCharacter = 'Z';
+            }
+        }
+
+
+
+        public void UseEmployee()
+        {
+
+            if (isAwake == false)
+            {
+                if (random.Next(100) < 10)
+                {
+                    this.isAwake = true;
+                    GameObjectsCharacter = '$';
+                }
+            }
+            else
+            {
+                if (random.Next(100) < 25)
+                {
+                    this.isAwake = false;
+                    GameObjectsCharacter = 'Z';
+
+                }
+                else
+                {
+                    this.moveEmployee(random.Next(1, 5));
+                }
+            }
 
         }
 
 
         public override void MoveObject(int direction)
         {
-            try{
+            if (isAwake == false)
+            {
+                isAwake = true;
+                GameObjectsCharacter = '$';
+            }
+
+        }
+
+
+        public void moveEmployee(int direction)
+        {
+            try
+            {
                 Tile tile = null;
                 switch (direction)
                 {
@@ -50,7 +103,7 @@ namespace Sokoban
                         tile.ChangeObjectOnTile(this);
                         StandsOnTile.DeleteObjectOnTile();
                         StandsOnTile = tile;
-                       
+
                     }
 
                 }
@@ -59,14 +112,7 @@ namespace Sokoban
             {
                 throw;
             }
-
-          
-
         }
-
-
-
-
 
     }
 }

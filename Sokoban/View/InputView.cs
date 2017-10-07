@@ -39,7 +39,7 @@ namespace Sokoban
         public int AskToSelectMazeInput()
         {
 
-            System.Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
+            System.Console.WriteLine("> Kies een doolhof (1 - 6), s = stop");
 
             this._keyInfo = Console.ReadKey(true);
 
@@ -65,7 +65,7 @@ namespace Sokoban
         }
 
 
-        public void ShowWrongInput()
+        public void ShowErrorInput()
         {
             System.Console.WriteLine("> ?");
         }
@@ -76,7 +76,14 @@ namespace Sokoban
             System.Console.WriteLine("=== HOERA OPGELOST ===");
             System.Console.WriteLine("> press key to continue");
             System.Console.ReadKey();
+            System.Console.Clear();
         }
+
+
+
+
+
+
 
 
     }

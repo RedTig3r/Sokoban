@@ -11,7 +11,7 @@ namespace Sokoban
 
         public EmptySpot()
         {
-            GameObjectsType = ObjectEnum.Space;
+            GameObjectsCharacter = ' ';
         }
 
         public override bool CanEnter()

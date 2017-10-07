@@ -9,47 +9,72 @@ namespace Sokoban
     {
         public Tile OriginalTile { get; set; }
         public Truck Truck { get; set; }
+
+        public Employee Employee { set; get; }
+
         public List <Crate> CrateList { get; set; }
-        public int MazeHeight { get; set; }
-        public int MazeWidth { get; set; }
+
+
+        public Maze()
+        {
+            CrateList = new List<Crate>();
+        }
 
         public void MoveTruck(int direction)
         {
-            try
+            if (Truck != null)
             {
-                
+                Truck.MoveObject(direction);
+
             }
-            catch
+      
+        }
+
+        public void MoveEmployee()
+        {
+            if (Employee != null)
             {
-                throw new Exception("Truck kan niet verplaatst worden!");
+                Employee.UseEmployee();
+
+            }
+
+        }
+
+
+        public void AddCrate(Crate crate)
+        {
+            if (CrateList != null)
+            {
+                CrateList.Add(crate);
             }
         }
 
         public bool gameIsFinished()
         {
-
-            int amountOfCrates = this.CrateList.Count;
-            int x = 0;
-            foreach (Crate crate in this.CrateList)
+            if (CrateList != null)
             {
-                if (crate.getStandsOnTileDirection() == true)
+                int amountOfCrates = this.CrateList.Count;
+                int x = 0;
+                foreach (Crate crate in this.CrateList)
                 {
-                    x++;
+                    if (crate.GameObjectsCharacter == '0')
+                    {
+                        x++;
+                    }
+                }
+
+
+                if (amountOfCrates == x)
+                {
+                    return true;
                 }
             }
-
-
-            if (amountOfCrates == x)
-            {
-                return true;
-            }
-            else
-            {
+           
+           
                 return false;
-            }
+           
 
         }
 
-      
     }
 }
