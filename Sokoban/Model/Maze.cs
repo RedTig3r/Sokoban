@@ -9,11 +9,8 @@ namespace Sokoban
     {
         public Tile OriginalTile { get; set; }
         public Truck Truck { get; set; }
-
         public Employee Employee { set; get; }
-
         public List <Crate> CrateList { get; set; }
-
 
         public Maze()
         {
@@ -25,9 +22,7 @@ namespace Sokoban
             if (Truck != null)
             {
                 Truck.MoveObject(direction);
-
-            }
-      
+            }      
         }
 
         public void MoveEmployee()
@@ -35,12 +30,9 @@ namespace Sokoban
             if (Employee != null)
             {
                 Employee.UseEmployee();
-
             }
-
         }
-
-
+        
         public void AddCrate(Crate crate)
         {
             if (CrateList != null)
@@ -62,18 +54,14 @@ namespace Sokoban
                         x++;
                     }
                 }
-
-
+                
                 if (amountOfCrates == x)
                 {
                     return true;
                 }
-            }
-           
-           
-                return false;
-           
 
+            }
+            return false;
         }
 
     }

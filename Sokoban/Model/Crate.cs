@@ -5,20 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sokoban
-{
-
-
-
+{        
     public class Crate : ObjectOnTile
     {
 
         public Crate(Tile standsOnTile)
         {
             StandsOnTile = standsOnTile;
-
             GameObjectsCharacter = 'o';
-
-
         }
 
         public override void MoveObject(int direction)
@@ -52,8 +46,7 @@ namespace Sokoban
                     {
                         GameObjectsCharacter = 'o';
                     }
-
-
+                    
                     tile.ChangeObjectOnTile(this);
                     StandsOnTile.DeleteObjectOnTile();
                     StandsOnTile = tile;
@@ -64,6 +57,8 @@ namespace Sokoban
                 throw;
             }
         }
+
+
     }
 }
 

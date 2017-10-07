@@ -14,7 +14,6 @@ namespace Sokoban
             GameObjectsCharacter = 'x';
         }
 
-
         public override bool CanEnter()
         {
             if (this.ObjectOnTile == null)
@@ -25,8 +24,6 @@ namespace Sokoban
             {
                 return false;
             }
-
-
         }
 
         public override void ChangeObjectOnTile(ObjectOnTile objectOnTile)

@@ -63,13 +63,11 @@ namespace Sokoban
                     return 0;
             }
         }
-
-
+        
         public void ShowErrorInput()
         {
             System.Console.WriteLine("> ?");
         }
-
 
         public void AskToPressKeyToStartOver()
         {

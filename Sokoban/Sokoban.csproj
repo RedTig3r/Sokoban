@@ -50,7 +50,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\EmptySpot.cs" />
     <Compile Include="Model\Floor.cs" />
-    <Compile Include="Model\TileObject.cs" />
+    <Compile Include="Model\ObjectOnTile.cs" />
     <Compile Include="Model\Crate.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Controller\GameController.cs" />

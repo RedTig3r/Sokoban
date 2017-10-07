@@ -16,17 +16,17 @@ namespace Sokoban
             System.Console.WriteLine("|                                                          |");
             System.Console.WriteLine("| Betekenis van symbolen        |   Doel van het spel      |");
             System.Console.WriteLine("|                               |                          |");
-            System.Console.WriteLine("|    ' ' : outerspace           |   Duw met de truck       |");
-            System.Console.WriteLine("|    '#' : muur                 |   de krat(ten)           |");
-            System.Console.WriteLine("|    '.' : vloer                |   naar de bestemming     |");
-            System.Console.WriteLine("|    'o' : krat                 |                          |");
-            System.Console.WriteLine("|    '0' : krat op bestemming   |                          |");
-            System.Console.WriteLine("|    'x' : bestemming           |                          |");
-            System.Console.WriteLine("|    '@' : truck                |                          |");
-            System.Console.WriteLine("|    '$' : Employee - Awak      |                          |");
-            System.Console.WriteLine("|    'Z' : Employee - sleeping  |                          |");
-            System.Console.WriteLine("|    '~' : Trap                 |                          |");
-            System.Console.WriteLine("|    ' ' : Trap Hole            |                          |");
+            System.Console.WriteLine("|    ' ' : Outerspace           |   Duw met de truck       |");
+            System.Console.WriteLine("|    '#' : Muur                 |   de krat(ten)           |");
+            System.Console.WriteLine("|    '.' : Vloer                |   naar de bestemming     |");
+            System.Console.WriteLine("|    'o' : Krat                 |                          |");
+            System.Console.WriteLine("|    '0' : Krat op bestemming   |                          |");
+            System.Console.WriteLine("|    'x' : Bestemming           |                          |");
+            System.Console.WriteLine("|    '@' : Truck                |                          |");
+            System.Console.WriteLine("|    '$' : Employee - Wakker    |                          |");
+            System.Console.WriteLine("|    'Z' : Employee - Slapend   |                          |");
+            System.Console.WriteLine("|    '~' : Val                  |                          |");
+            System.Console.WriteLine("|    ' ' : Valkuil              |                          |");
             System.Console.WriteLine("|__________________________________________________________|");
             Console.WriteLine("");
 
@@ -68,30 +68,20 @@ namespace Sokoban
                 {
                     while (tile != null)
                     {
-
                         Console.Write(tile.GetTileGameObjectsCharacter());
                         tile = tile.RightTile;
                     }
-
-            
+                                
                     downTile = downTile.DownTile;
                     tile = downTile;
                     Console.WriteLine();
-
-                }
-
-    
+                }   
 
                 Console.WriteLine();
-            }
-
-            
-
+            }           
         }
 
+
     }
-
-
-
 }
 

@@ -16,7 +16,6 @@ namespace Sokoban
 
         public Maze CreateMaze(int mazeNumber)
         {
-
             try
             {
                 this._maze = new Maze();
@@ -28,13 +27,12 @@ namespace Sokoban
                 List<Tile> previousTileList = null;
 
 
-                this._input = new FileStream(this._fileName, FileMode.Open, FileAccess.Read);
+                this._input = new FileStream(this._fileName, FileMode.Open, FileAccess.Read);   
                 this._reader = new StreamReader(this._input);
-                string lineString = this._reader.ReadLine();
+                string lineString = this._reader.ReadLine();    //de file bestand
 
                 while (lineString != null)
                 {
-
                     currentTileList = new List<Tile>();
 
                     Tile currentTile = null;
@@ -42,7 +40,6 @@ namespace Sokoban
 
                     for (int x = 0; x < lineString.Length; x++)
                     {
-
                         currentTile = null;
 
                         switch (lineString[x])
@@ -57,12 +54,12 @@ namespace Sokoban
                                 currentTile = new Floor();
 
                                 Employee employeeASleep = new Employee(currentTile, false);
-
                                 currentTile.ObjectOnTile = employeeASleep;
                                 _maze.Employee = employeeASleep;
                                 break;
                             case 'o':
                                 currentTile = new Floor();
+
                                 Crate crateNormal = new Crate(currentTile);
                                 _maze.AddCrate(crateNormal);
                                 currentTile.ObjectOnTile = crateNormal;
@@ -70,6 +67,7 @@ namespace Sokoban
                                 break;
                             case '0':
                                 currentTile = new Destination();
+
                                 Crate crateOnDestination = new Crate(currentTile);
                                 _maze.AddCrate(crateOnDestination);
                                 currentTile.ObjectOnTile = crateOnDestination;
@@ -78,7 +76,6 @@ namespace Sokoban
                                 currentTile = new Floor();
 
                                 Employee employeeAwake = new Employee(currentTile, true);
-
                                 currentTile.ObjectOnTile = employeeAwake;
                                 _maze.Employee = employeeAwake;
                                 break;
@@ -89,7 +86,6 @@ namespace Sokoban
                                 currentTile = new Floor();
 
                                 Truck truck = new Truck(currentTile);
-
                                 currentTile.ObjectOnTile = truck;
                                 _maze.Truck = truck;
                                 break;
@@ -115,7 +111,6 @@ namespace Sokoban
                     {
                         for (int i = 0; i < currentTileList.Count; i++)
                         {
-
                             currentTileList[i].UpTile = previousTileList[i];
                             previousTileList[i].DownTile = currentTileList[i];
                         }
@@ -124,18 +119,15 @@ namespace Sokoban
                     {
                         this._maze.OriginalTile = currentTileList[0];
                     }
-
-
+                    
                     previousTileList = currentTileList;
-
-
+                    
                     lineString = this._reader.ReadLine();
                 }
 
                 this._reader.Close();
                 this._input.Close();
-
-
+                
                 return _maze;
             }
             catch
@@ -143,6 +135,8 @@ namespace Sokoban
                 throw;
             }
         }
+
+
 
     }
 }

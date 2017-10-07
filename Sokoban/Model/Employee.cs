@@ -8,7 +8,6 @@ namespace Sokoban
     public class Employee : ObjectOnTile
     {
 
-
         Random random = new Random();
         bool isAwake;
 
@@ -26,9 +25,7 @@ namespace Sokoban
                 GameObjectsCharacter = 'Z';
             }
         }
-
-
-
+        
         public void UseEmployee()
         {
 
@@ -46,7 +43,6 @@ namespace Sokoban
                 {
                     this.isAwake = false;
                     GameObjectsCharacter = 'Z';
-
                 }
                 else
                 {
@@ -64,10 +60,8 @@ namespace Sokoban
                 isAwake = true;
                 GameObjectsCharacter = '$';
             }
-
         }
-
-
+        
         public void moveEmployee(int direction)
         {
             try
@@ -95,17 +89,13 @@ namespace Sokoban
                     {
                         tile.ObjectOnTile.MoveObject(direction);
                     }
-
-
-
+                    
                     if (tile.CanEnter())
                     {
                         tile.ChangeObjectOnTile(this);
                         StandsOnTile.DeleteObjectOnTile();
                         StandsOnTile = tile;
-
                     }
-
                 }
             }
             catch

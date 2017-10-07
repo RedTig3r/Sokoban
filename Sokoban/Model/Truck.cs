@@ -12,10 +12,8 @@ namespace Sokoban
         {
             this.StandsOnTile = standsOnTile;
             GameObjectsCharacter = '@';
-
         }
-
-
+        
         public override void MoveObject(int direction)
         {
             try{
@@ -43,14 +41,11 @@ namespace Sokoban
                         tile.ObjectOnTile.MoveObject(direction);
                     }
 
-
-
                     if (tile.CanEnter())
                     {
                         tile.ChangeObjectOnTile(this);
                         StandsOnTile.DeleteObjectOnTile();
-                        StandsOnTile = tile;
-                       
+                        StandsOnTile = tile;                       
                     }
 
                 }
@@ -58,15 +53,8 @@ namespace Sokoban
             catch
             {
                 throw;
-            }
-
-          
-
+            }     
         }
-
-
-
-
 
     }
 }

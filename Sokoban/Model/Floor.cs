@@ -8,13 +8,11 @@ namespace Sokoban
     public class Floor : Tile
     {
 
-
         public Floor()
         {
             GameObjectsCharacter = '.';
         }
-
-
+        
         public override bool CanEnter()
         {
             if (this.ObjectOnTile == null)
@@ -25,8 +23,6 @@ namespace Sokoban
             {
                 return false;
             }
-
-
         }
 
         public override void ChangeObjectOnTile(ObjectOnTile objectOnTile)
@@ -38,8 +34,7 @@ namespace Sokoban
         {
             this.ObjectOnTile = null;
         }
-
-      
+              
 
     }
 }

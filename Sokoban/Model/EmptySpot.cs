@@ -7,8 +7,7 @@ namespace Sokoban
 {
     public class EmptySpot : Tile
     {
-
-
+        
         public EmptySpot()
         {
             GameObjectsCharacter = ' ';

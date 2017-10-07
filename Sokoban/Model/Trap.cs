@@ -8,15 +8,14 @@ namespace Sokoban
     public class Trap : Tile
     {
 
-        private int amountOfTimesUsed;
+        private int amount_Used;
 
         public Trap()
         {
             GameObjectsCharacter = '~';
-            amountOfTimesUsed = 0;
+            amount_Used = 0;
         }
-
-
+        
         public override bool CanEnter()
         {
             if (this.ObjectOnTile == null)
@@ -27,26 +26,22 @@ namespace Sokoban
             {
                 return false;
             }
-
-
         }
 
         public override void ChangeObjectOnTile(ObjectOnTile objectOnTile)
         {
             this.ObjectOnTile = objectOnTile;
-            amountOfTimesUsed++;
+            amount_Used++;
 
             if (GameObjectsCharacter == ' ' && ObjectOnTile is Crate)
             {
                 this.DeleteObjectOnTile();
             }
 
-            if (amountOfTimesUsed > 3)
+            if (amount_Used > 3)
             {
                 GameObjectsCharacter = ' ';
-            }
-
-         
+            }        
 
         }
 

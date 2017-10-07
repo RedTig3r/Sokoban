@@ -21,7 +21,6 @@ namespace Sokoban.Controller
             this._outputView = new OutputView();
             this._fileReader = new FileReader();
             this.StartGame();
-
         }
 
         private void StartGame()
@@ -54,16 +53,12 @@ namespace Sokoban.Controller
                         _inputView.ShowErrorInput();
                         inputIsCorrect = false;
                     }
-
                 }
 
                 if (_maze != null)
-                {
-
-
+                {                    
                     while (_gameIsFinish != true)
                     {
-
                         _gameIsFinish = _maze.gameIsFinished();
 
                         inputIsCorrect = _gameIsFinish;
@@ -82,7 +77,6 @@ namespace Sokoban.Controller
                             }
                             else
                             {
-
                                 if (askInputNumber == -2)
                                 {
                                     _maze = _fileReader.CreateMaze(mazeNumber);
@@ -98,35 +92,24 @@ namespace Sokoban.Controller
 
                                 inputIsCorrect = true;
                             }
-
                         }
 
                         _maze.MoveEmployee();
-
                     }
                 }
                 else
                 {
                     _inputView.ShowErrorInput();
                 }
-
-
-
+                
                 _inputView.AskToPressKeyToStartOver();
                 this.StartGame();
-
             }
             catch
             {
                 throw;
             }
-
-
         }
-
-
-
-
 
 
     }

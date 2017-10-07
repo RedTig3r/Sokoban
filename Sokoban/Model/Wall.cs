@@ -14,7 +14,6 @@ namespace Sokoban
             GameObjectsCharacter = '#';
         }
 
-
         public override bool CanEnter()
         {
                 return false;
