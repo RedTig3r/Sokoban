@@ -29,7 +29,7 @@ namespace Sokoban
 
                 this._input = new FileStream(this._fileName, FileMode.Open, FileAccess.Read);   
                 this._reader = new StreamReader(this._input);
-                string lineString = this._reader.ReadLine();    //de file bestand
+                string lineString = this._reader.ReadLine();   
 
                 while (lineString != null)
                 {

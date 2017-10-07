@@ -10,18 +10,11 @@ namespace Sokoban
 
         public char GameObjectsCharacter;
 
-        public Tile()
-        {
-
-        }
-
         public ObjectOnTile ObjectOnTile { get; set; }
         public Tile RightTile { get; set; }
         public Tile LeftTile { get; set; }
         public Tile UpTile { get; set; }
         public Tile DownTile { get; set; }
-        public Truck truck { get; set; }
-        public Crate crate { get; set; }
 
         public abstract bool CanEnter();
 
